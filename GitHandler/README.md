@@ -51,7 +51,7 @@ Git 的操作
 
 4.git的命令
 
-`
+```
 	4.1、git clone xxxx (从远程仓库拷贝一份代码到本地仓库)
 			git clone https://github.com/lyh165/test.git
 	4.2、git status  (查看本地仓库的状态)
@@ -73,7 +73,7 @@ Git 的操作
 	3.13 git tag 	(查看版本)
 	3.14 git push origin kdh:kdh --tags (推送版本)
 
-`
+```
 
 git push origin kdh:kdh(前面的kdh代表本地分支,后面的kdh代表远程分支)
 如果提交过一次代码
