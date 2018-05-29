@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新增选择器</title>
+	<script type="text/javascript">
+		window.onload = function(){
+// js 新增的选择器 (2.0新增)
+			var oDiv = document.querySelector('#div1'); // 样式写法
+			var aLi = document.querySelectorAll('.list');
+
+			alert(aLi.length);
+
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">这是一个div</div>
+	<ul class="list">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

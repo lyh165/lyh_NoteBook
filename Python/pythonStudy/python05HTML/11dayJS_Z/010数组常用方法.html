@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10数组的常用方法</title>
+	<script type="text/javascript">
+// 1.join方法 (以什么分割符 进行合并)
+		var aRr = [1,2,3,4];
+		var sTr = aRr.join("-");
+		var sTr2 = aRr.join("");
+		//alert(sTr);	// 弹出 1-2-3-4
+		//alert(sTr2); // 弹出 1234
+
+// 2.push 增加 pop 删除成员
+		aRr.push(5); 
+		//alert(aRr);	// 弹出1,2,3,4,5
+		aRr.pop(5);
+		//alert(aRr);	// 弹出 1,2,3,4
+
+// 3.unshift 前面增加 pop 前面删除成员
+
+		aRr.unshift(0);
+		//alert(aRr);		// 弹出0,1,2,3,4
+		aRr.shift(0);
+		//alert(aRr);		// 弹出1,2,3,4
+		//
+// 4.reverse 翻转排序
+		aRr.reverse(0);
+		//alert(aRr);		// 弹出4,3,2,1
+// 5.indexOf 弹出最近的一个索引值
+		var aRr2 = ['a','b','c','d','a','b','c','d'];
+		var num = aRr2.indexOf('b');
+		//alert(num); // 弹出1
+// 6.splice  
+		/*
+		从第几个元素 开始删除元素 		 
+		aRr2.splice(2,1);
+		alert(aRr2); // 弹出a,b,d,a,b,c,d
+		*/
+		
+		// 删除的时候 用什么元素放进
+		aRr2.splice(2,1,'e');
+		alert(aRr2); // 弹出a,b,e,d,a,b,c,d
+
+		aRr2.splice(4,4,'f','g','h','i');
+		alert(aRr2);  // 弹出a,b,e,f,g,h,i
+		
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

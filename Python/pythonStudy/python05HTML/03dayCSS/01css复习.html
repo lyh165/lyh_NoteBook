@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css选择器</title>
+	<style type="text/css">
+		/*标签 选择器*/
+		div,p{
+			font-size: 20px;
+			color: blue;
+		}
+		
+		p:hover{
+			color: red;
+		}
+
+		/*id 选择器*/
+		#box{
+			color: pink;
+		}
+		/*类 选择器*/
+		.yahei{
+			font-family:'Microsoft Yahei';
+		}
+		
+		.indent{
+			/*缩进*/
+			text-indent: 40px;
+		}
+		
+		/*层级 选择器*/
+		.list li{
+			height: 30px;
+		}
+
+		.list a{
+			/*去除下划线*/
+			text-decoration: none;
+			/*text-decoration: none;*/
+			color: #333;
+		}
+
+		/*组选择器 用于抽取公共部分 其他的设置不同部分即可*/
+		.box1,.box2,.box3{
+			font-size: 14px;
+			text-indent: 28px;
+		}
+
+		.box1{
+/*			font-size: 14px;
+			text-indent: 28px;*/
+			color: gold;
+		}
+
+		.box2{
+	/*		font-size: 14px;
+			text-indent: 28px;*/
+			color: pink;
+		}
+
+		.box3{
+	/*		font-size: 14px;
+			text-indent: 28px;*/
+			color: red;
+		}
+
+		/*伪类及伪元素选择器
+		一般用于兼容
+		a:hover
+		*/
+		.list a:hover{
+			color: gold;
+			/*显示下划线*/
+			text-decoration: underline;
+		}
+
+		.box1:before{
+			content:"在前面的文字 ";
+			color: blue;
+		}
+
+		.box2:after{
+			content:"在后面的文字 ";
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="indent">这是一个div元素</div>
+	<div id="box" class="yahei">这是第二个div元素</div>
+	<div class="yahei">这是第三个div元素</div>
+	
+	<p>这是一段文字，这是一段文字，这是一段文字</p>
+
+	<ul class="list">
+		<li><a href="">新闻标题</a></li>
+		<li><a href="">新闻标题</a></li>
+		<li><a href="">新闻标题</a></li>
+		<li><a href="">新闻标题</a></li>
+		<li><a href="">新闻标题</a></li>
+	</ul>
+
+	<div class="box1">文字001</div>
+	<div class="box2">文字001</div>
+	<div class="box3">文字001</div>
+
+</body>
+</html>
+
+<!-- 
+单词表
+decoration
+ -->

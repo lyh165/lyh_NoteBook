@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算器</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oInput01 = document.getElementById('input01');
+			var oFuhao = document.getElementById('fuhao');
+			var oInput02 = document.getElementById('input02');
+			var oBtn = document.getElementById('btn');
+
+			
+			oBtn.onclick = function(){
+				var num01 = oInput01.value; 
+				var num02 = oInput02.value; 
+				var fuhao = oFuhao.value; 
+
+				if(num01 =="" || num02 == "")
+				{	
+					alert('输入框不能为空！');
+					return;
+				}
+
+// 未做,判断是不是数字 最好使用正则表达式
+// 判断是不是小数 可以 先判断第一位是不是数字 如果是 后面可以加上0~1个点 在后面添加多个数字
+				// isNaN 是不是一个数字 
+				// a = '123abc'
+				// a 不是一个 不是数字 true
+				if(isNaN(num01) || isNaN(num02))
+				{
+					alert('请输入数字');
+					return;
+				}
+
+			
+				switch (fuhao)
+				{
+					case '0':
+					alert(((parseFloat(num01)*100)+(parseFloat(num02)*100))/100);
+					break;
+					case '1':
+					alert(((parseFloat(num01)*100)-(parseFloat(num02)*100))/100);
+					break;
+					case '2':
+					alert(((parseFloat(num01)*100)*(parseFloat(num02)*100))/10000);
+					break;
+					case '3':
+					alert((parseFloat(num01)*100)/(parseFloat(num02)*100));
+					break;
+				}
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<h3>计算器</h3>
+	<input type="text" name="" id="input01">
+	<select id="fuhao">
+		<option value="0">+</option>
+		<option value="1">-</option>
+		<option value="2">*</option>
+		<option value="3">/</option>
+	<input type="text" name="" id="input02">
+	<input type="button" name="" value="计算" id="btn">
+</body>
+</html>

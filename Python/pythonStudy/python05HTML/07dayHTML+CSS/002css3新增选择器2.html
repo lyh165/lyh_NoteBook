@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css选择器</title>
+	<style type="text/css">
+		li:nth-child(1)
+		{
+			background-color: red;
+		}
+		li:nth-last-child(1)
+		{
+			background-color: gold;
+		}
+
+		.box p:only-child{
+			background-color: yellow;
+		}
+
+		.box p:only-of-type{
+			background-color: pink;
+		}
+
+		div:empty{
+			background-color: blue;
+			height: 10px;
+		}
+		
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+
+	<div class="box">
+		<p>这是第一个p元素</p>
+		<div>这是第一个div元素</div>
+		<p>这是第一个p元素</p>
+	</div>
+
+	<div></div>
+
+</body>
+</html>

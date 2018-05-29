@@ -1,0 +1,195 @@
+公共*/
+body{
+	/*字体 ： 微软雅黑*/
+	font-family: 'Microsoft Yahei'; 
+
+}
+
+/*导航条*/
+.navbar {
+	margin-bottom: 0;
+}
+
+.navbar-brand{
+	padding: 5px 15px;
+}
+
+.navbar-inverse {
+    background-color: #ff722b;
+    border-color: #ff722b;
+}
+
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-inverse .navbar-toggle:hover,.navbar-inverse .navbar-toggle:focus {
+    background-color: pink;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fff;
+}
+
+/*巨幕*/
+.jumbotron{
+	/*左右居中、上下居中*/
+	background: url(../images/banner_bg.jpg) center center no-repeat;
+	padding: 24px 0;
+	margin-bottom: 0px;
+}
+
+.banner_title{
+	margin-top: 40px;
+}
+
+/*当屏幕是最大是992的时候 进行修改下面的参数*/
+@media (max-width: 992px) {
+	.banner_title{
+	margin-top: 10px;
+}
+}
+
+.active_title{
+	font-size: 18px;
+	color: #ff0;
+	margin-top: 20px;
+}
+
+.jumbotron .active_detail{
+	font-size: 14px;
+	color: #fff;
+	line-height: 28px;
+}
+
+/*活动图片*/
+
+.active_pic_title{
+	font-size: 30px;
+	color: #333;
+	margin: 32px 0 10px;
+}
+.active_pic_title_detail{
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+
+/*图片列表*/
+.pic_detail_title{
+	text-align: center;
+	font-size: 15px;
+	color: #333;
+}
+
+.thumbnail{
+	max-width: 270px;
+	margin: 0px auto 20px;
+	
+}
+
+
+/*推荐商品导航*/
+.common_title{
+	height: 40px;
+	background-color: #ff722b;
+}
+.common_title h3{
+	height: 40px;
+	font-size: 16px;
+	color: #fff;
+	line-height: 40px;
+	text-indent: 20px;
+	margin:0;
+	padding: 0;
+}
+.common_title a{
+	font-size: 12px;
+	color: #fff;
+	margin: 15px 20px 0 0;
+
+}
+
+/*商品list*/
+.goods_list_show .goods_name{
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+}
+
+.goods_list_show .goods_price{
+	font-size: 16px;
+	color:#f00;
+	text-align: center;
+}
+
+.goods_list_show .goods_price em{
+	font-size: 22px;
+	font-style: normal;
+}
+
+.goods_list_show
+{
+	border:1px solid #ddd;
+	margin-top: 20px;
+	border-right-color: #fff;
+}
+.goods_list_show img{
+	margin: 0 auto;
+}
+
+.goods_list{
+	margin: 0;
+}
+
+/*设置2倍的第一个往后面边框设置白色*/
+.goods_list .goods_list_show:nth-child(2n){
+	border-right-color: #ddd;
+}
+
+
+/*如果屏幕最小是768的时候
+	2的倍数 边框设置成白色 
+	3的倍数 边框添加成#ddd颜色
+*/
+@media (min-width: 768px) {
+	.goods_list .goods_list_show:nth-child(2n){
+	border-right-color: #fff;
+	}
+
+	.goods_list .goods_list_show:nth-child(3n){
+	border-right-color: #ddd;
+	}
+}
+
+@media (min-width: 992px) {
+	.goods_list .goods_list_show:nth-child(2n){
+	border-right-color: #fff;
+	}
+
+	.goods_list .goods_list_show:nth-child(3n){
+	border-right-color: #fff;
+	}
+
+	.goods_list .goods_list_show:nth-child(4n){
+	border-right-color: #ddd;
+	}
+}
+
+@media (min-width: 1200px) {
+
+
+	.goods_list .goods_list_show:nth-child(4n){
+	border-right-color: #fff;
+	}
+
+	.goods_list .goods_list_show:nth-child(6n){
+	border-right-color: #ddd;
+	}
+}

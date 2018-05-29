@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css选择器</title>
+	<style type="text/css">
+		input:disabled{
+			background-color: red;
+		}
+		input:enabled{
+			background-color: blue;
+		}
+		
+		/*input:checked + label{
+			background-color: red;
+		}*/
+
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			display: none;
+		}
+		
+	input:checked + div{
+		display: block;
+		}
+
+	</style>
+</head>
+<body> 
+<!-- 表单控件 -->
+	<input type="text" name="" disabled>
+	<input type="text" name="">
+
+
+	<input type="checkbox">
+	<div class="box">这是一个div元素</div>
+
+</body>
+</html>

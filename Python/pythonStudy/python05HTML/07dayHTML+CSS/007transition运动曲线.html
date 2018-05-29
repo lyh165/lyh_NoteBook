@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 transition的运动曲线</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: gold;
+			margin-bottom: 20px;
+		}
+		
+		/*匀速*/
+		div:nth-child(1){
+			transition: all 1s linear;
+		}
+		/*开始和结束慢速*/
+		div:nth-child(2){
+			transition: all 1s ease;
+		}
+		/*开始慢速*/
+		div:nth-child(3){
+			transition: all 1s ease-in;
+		}
+		/*结束慢速*/
+		div:nth-child(4){
+			transition: all 1s ease-out;
+		}
+		/*开始、结束、慢速*/
+		div:nth-child(5){
+			transition: all 1s ease-in-out;
+		}
+		
+		div:nth-child(6){
+			transition: all 1s cubic-bezier(0.750,-0.425,0.055,1.480);
+		}
+		div:hover{
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+	<div>linear</div>
+	<div>ease</div>
+	<div>ease-in</div>
+	<div>ease-out</div>
+	<div>ease-in-out</div>
+	<div>bezier</div>
+</body>
+</html>

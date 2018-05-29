@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+	<script type="text/javascript">
+// 闭包 
+	/*
+	function aa(b){
+		var a = 12;
+		function bb(){
+			alert(a);
+			alert(b);
+		}
+		return bb;
+	}
+	var cc = aa(24);
+	cc();
+	*/
+
+// 闭包改成封闭函数
+	
+	var cc =(function(b){
+		var a = 12;
+		function bb(){
+			alert(a);
+			alert(b);
+		}
+		return bb;
+	})(24);
+	cc();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

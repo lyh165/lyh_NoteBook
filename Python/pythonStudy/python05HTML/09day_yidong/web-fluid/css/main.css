@@ -1,0 +1,142 @@
+.body{
+	font-family: 'Microsoft Yahei';
+}
+
+/*一、首页*/
+.main_wrap{
+	/*为什么要用绝对定位做
+	因为在微信里面可能底部的tarbar点击不了
+	*/
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	/*background-color: gold;*/
+}
+
+/*二、头部*/
+.header{
+	/*这里没有进行定位 默认就是块元素*/
+	height: 50px;
+	background-color: #37ab40;
+	position: relative;
+}
+.header .logo{
+	width: 89px;
+	height: 36px;
+	/*转成行内块元素*/
+	display: block;
+	margin: 7px auto 0;
+}
+.header .logo img{
+	/*img直接给width的100% 就是等于logo的宽度
+		高度默认就会给
+	*/
+	width: 100%;
+}
+.header .search{
+	position: absolute;
+	/*这里的尺寸 因为psd文件是2倍图 所以做出来的图片都要除以2*/
+	width: 27px;
+	height: 27px;
+	right: 15px;
+	top: 12px;
+	background:url(../images/icons.png) left top no-repeat;
+	/*把背景减少一半 因为是2倍图 下面拿的是icons的图片*/
+	background-size: 60px 840px;
+}
+
+/*三、中心部*/
+.center_wrap{
+	/*中间部分要使用定位
+	因为有些手机屏幕比较高，不确定
+	*/
+	position: absolute;;
+	left: 0;
+	right: 0;
+	top: 50px;
+	bottom: 50px;
+	/*background-color: red;*/
+
+	/*横线不会出现滚动条*/
+	overflow-x:hidden;
+	/*纵向会出现滚动条*/
+	overflow-y: auto;
+
+
+}
+/*幻灯片*/
+.slide img{
+	width: 100%;
+}
+/*分类菜单*/
+.menu{
+	background-color: #fff;
+	height: 173px;
+	margin-top: 10px;
+	padding-top: 12px;
+}
+.menu li{
+	width: 25%;
+	height: 81px;
+	float: left;
+	/*background-color: gold;*/
+}
+
+.menu li a{
+	display: block;
+	width: 56px;
+	height: 56px;
+	background-color: cyan;
+
+	background:url(../images/icons.png) -1px -60px no-repeat;
+	background-size: 60px 840px;
+	margin: 0 auto;
+}
+
+.menu li h2{
+	height: 26px;
+	font: bold 13px/25px 'Microsoft Yahei';
+	text-align: center;
+	color: #666;
+}
+
+.menu li:nth-child(2) a{
+	background-position: left -120px;
+}
+.menu li:nth-child(3) a{
+	background-position: left -180px;
+}
+.menu li:nth-child(4) a{
+	background-position: left -240px;
+}
+.menu li:nth-child(5) a{
+	background-position: left -300px;
+}
+.menu li:nth-child(6) a{
+	background-position: left -360px;
+}
+.menu li:nth-child(7) a{
+	background-position: left -420px;
+}
+.menu li:nth-child(8) a{
+	background-position: left -480px;
+}
+
+/*四、底部*/
+.footer{
+	/*定位就会变成行内块元素
+		如果需要设置回块元素
+		必须设置宽度或者高度
+	*/
+	/*
+	用定位兼容微信
+	 */
+	width: 100%;
+	position: absolute;;
+	height: 50px;
+	left: 0;
+	bottom: 0;
+	background-color: #ddd;
+}

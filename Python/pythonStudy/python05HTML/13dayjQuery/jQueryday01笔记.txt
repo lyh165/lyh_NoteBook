@@ -1,0 +1,76 @@
+jQuery day01笔记.txt
+
+1.复习封闭函数
+	用来防止内部修改外部的变量
+2.复习闭包
+	方法里面定义方法 在最后一个方法中 return本方法
+
+
+3.js面向对象
+	单体
+	var 单体名称 = {
+		声明属性
+		实现函数
+	}
+	单体.属性
+	单体.执行方法();
+
+
+	工厂方法
+	function Person(形参列表...){
+		var o = new Object(); // 创建一个空对象
+		形参给类属性赋值	...
+		方法(函数)实现...
+	}
+
+4.js面向对象2
+	将方法绑定到原型里面去
+
+5.继承
+		function Sclass(name,age,job){
+			// 属性用 call 或者apply的方式来来继承
+			Fclass.call(this,name,age);
+			this.job = job;		
+		}
+	// 方法继承：将父类的一个实例 赋值给自雷的原型属性
+		Sclass.prototype = new Fclass();
+
+6.call和apply的区别
+	都是改变this对象
+	call 第二个参数是想怎么写就怎么写
+	apply 第二个参数是用数组来写	
+
+7.js新增的选择器
+			var oDiv = document.querySelector('#div1'); // 样式写法
+			var aLi = document.querySelectorAll('.list li');
+
+8.jQuery选择器
+	jQuery基本写法
+	$(function(){
+			$('#div1').css({color:'pink'});
+			$('.box').css({fontSize:'30px'});	
+			$('.list li').css({background:'green',color:'#fff',fontSize:'20px'});
+	});
+
+9.jQuery的选择器
+	$('#div1').nextAll('p').css({color:'red'});
+
+	// parent	选择上一级的元素		
+	// closest	选择离最近的元素。元素可以是父级、可以是子级
+	// children 和 &$('.list li')的区别是，原始的选择集不一样，下面的可以回到父级。
+	// $('.list li') 不能回到父级
+	// $('.list').children() 可以通过end()回到父级
+	// siblings
+	// find
+
+10.jQuery样式操作
+	// 读取样式 
+			alert($('.div1').css('fontSize'));
+	// 设置样式
+			$('.div1').css({background:'gold'});
+	// 添加样式
+			$('.div1').addClass('big');
+	// 删除样式
+			$('.div1').removeClass('div1');		
+
+11.jQuery做选项卡			

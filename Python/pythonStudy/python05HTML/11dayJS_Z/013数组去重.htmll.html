@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重</title>
+	
+	<script type="text/javascript">
+	var aRr = [1,2,3,4,5,6,7,8,9,4,2,3,1,5,7,6,8,9,5,2,1,2];
+
+	var aRr2 = [];
+
+	for(var i = 0;i<aRr.length;i++)
+	{
+		if(aRr.indexOf(aRr[i])==i)
+		{
+			aRr2.push(aRr[i]); // 相同才会push到 aRr2里面
+		}
+	}
+
+	alert(aRr2);
+
+	</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: gold;
+			margin: 50px auto 0;
+
+			/*both 以最后的一次属性进行赋值*/
+			animation: moving 2s ease 1s both;
+		}
+/*animation的进度时间条*/
+
+		@keyframes moving{
+			0%{
+				transform: translateY(10px);
+			}
+			20%
+			{
+				transform: translateY(10px);
+			}
+			50%
+			{
+				transform: translateY(300px);
+				background-color: gold;
+				border-radius: 50%;
+			}
+
+			80%
+			{
+				transform: translateY(0px);
+				background-color: red;
+			}
+
+			100%
+			{
+				transform: translateY(0px);
+				background-color: red;
+				border-radius: 50%;
+
+			}
+
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

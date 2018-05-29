@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+	//alert($);
+
+		// 这个需要加载完成才执行
+		window.onload = function(){
+			var oDiv = document.getElementById('div');
+			alert(oDiv.innerHTML);
+		}
+
+// ready是界面所有节点加载完 就执行(不需要渲染)
+		/*
+		$(document).ready(function(){
+			var $div = $('#div');
+			alert($div.html()+'jQuery');
+		})
+		*/
+// 	简写	
+		$(function(){
+			var $div = $('#div');
+			alert($div.html()+'jQuery');
+		});
+		
+	</script>
+</head>
+<body>
+	<div id="div">这是一个div元素</div>
+</body>
+</html>

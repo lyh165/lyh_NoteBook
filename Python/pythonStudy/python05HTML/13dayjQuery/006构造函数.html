@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>构造函数</title>
+	<script type="text/javascript">
+
+		function Person(name,age,job){
+			this.name = name;
+			this.age = age;
+			this.job = job;
+
+			this.showname = function(){
+				alert(this.name);
+			}
+			this.showage = function(){
+				alert(this.age);
+			}
+			this.showjob = function(){
+				alert(this.job);
+			}
+		}
+
+// 构造函数
+		var p = new Person('lyh',19,'python');
+		var jack = new Person('jack',11,'worker');
+		//p.showjob();
+// 方法不是共用的，会浪费资源
+		alert(p.showjob == jack.showjob);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

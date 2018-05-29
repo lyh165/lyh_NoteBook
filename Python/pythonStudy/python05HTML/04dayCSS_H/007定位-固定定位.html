@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>固定定位</title>
+	<style type="text/css">
+		.con{
+			width: 400px;
+			height: 400px;
+			border:1px solid #000;
+			margin: 100px auto 0;
+		}
+		.con div{
+			width: 200px;
+			height: 100px;
+			margin: 20px;
+			background-color: gold;
+			text-align: center;
+			line-height: 100px;
+			font-size: 40px;
+		}
+		body .box1{
+	
+			background-color: green;
+		}
+	
+		.box4{
+			background-color: pink;
+			position: absolute;
+			left: 100px;
+			top: 100px;
+		}
+	</style>
+</head>
+<body>
+<!-- 定位
+	相对定位 position relative 
+	(相对于自己的位置去偏移，但是之前的位置还是占有的)
+	绝对定位 position: absolute 
+	(脱离自己的位置，去上一级寻找位置，如果上一级不没有，那么继续往上找，直到body为止，之前自己的位置不要了)
+	固定定位 是根据浏览器的页面是寻找位置的
+
+	使用相对定位 就变成了行内块元素了
+	-->
+	<div class="con">
+
+		<div class="box1">1</div>
+		<div class="box2">2</div>
+		<div class="box3">3</div>
+	</div>
+		<div class="box4">第四个盒子</div>
+
+</body>
+</html>
+
+<!-- 
+单词表
+fixed
+ -->

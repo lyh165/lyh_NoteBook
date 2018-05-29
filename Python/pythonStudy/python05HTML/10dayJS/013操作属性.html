@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js操作属性</title>
+	<script type="text/javascript">
+
+	// 匿名函数
+	// 当整个文档执行完之后，再去执行这个方法
+		window.onload = function(){
+			var oDiv = document.getElementById('div1');
+			oDiv.title = "我看到了!";
+
+			var oA = document.getElementById('link1');
+			oA.href = "http://baidu.com";
+			oA.title = "去到百度网";
+			alert(oA.id);
+		}
+		
+	</script>
+
+</head>
+<body>
+	
+	<div id="div1" class="div1" title="这是div元素。看到了吧">这是一个div元素</div>
+	<a href="#" id="link1">百度网</a>
+</body>
+</html>

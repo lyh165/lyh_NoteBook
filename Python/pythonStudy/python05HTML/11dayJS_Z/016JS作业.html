@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算器</title>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var OInput1 = document.getElementById('input1');
+			var OInput2 = document.getElementById('input2');
+			var btn01 = document.getElementById('btn01');
+			var oList = document.getElementById('select');
+			var aLi = oList.getElementsByTagName('option');
+			btn01.onclick = calculate(1,35,33);
+			function calculate(symbol,OInput1,OInput2)
+			{
+					switch (symbol)
+					{
+						case 0:
+							alert((parseFloat(OInput1)*100+parseFloat(OInput2)*100)/100);
+							break;
+						case 1:
+							alert((parseFloat(OInput1)*100-parseFloat(OInput2)*100)/100);
+							break;
+						case 2:
+							alert((parseFloat(OInput1)*100*parseFloat(OInput2)*100)/100);
+							break;
+						case 3:
+							alert((parseFloat(OInput1)*100/parseFloat(OInput2)*100)/100);
+							break;
+						default:
+							alert('不补习');
+							break;
+					}
+			}
+
+
+		}
+
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="input1">
+	<select id="select">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+	<input type="text" name="" id="input2">
+	<input type="button" name="" value="计算" id="btn01">
+
+
+	</select>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css背景</title>
+	<style type="text/css">
+	.box{
+		width: 320px;
+		height: 160px;
+		border:5px solid #000;
+		background-color: gold;
+		background-image: url(images/bg.jpg);
+		margin-bottom: 50px;
+		font-size: 40px;
+		color: gold;
+	}
+
+	.box2{
+		width: 320px;
+		height: 160px;
+		border:5px solid #000;
+		background-color: gold;
+		margin-bottom: 50px;
+		font-size: 40px;
+		color: red;
+	}
+	.box3{
+		width: 320px;
+		height: 160px;
+		border:5px solid #000;
+		background-color: gold;
+		background-image: url(images/bg.jpg);
+
+		/*
+		repeat：重复平铺;
+		repeat-x: 横向重复平铺
+		repeat-y: 纵向重复平铺
+		no-repeat: 不平铺
+		 */
+		background-repeat: no-repeat;
+
+	}
+	</style>
+</head>
+<body>
+	<!-- 图片作为背景  -->
+	<div class="box">背景图片</div>
+
+	<!-- 图片作为内容的一部分 -->
+	<div class="box2"><img src="images/bg.jpg">背景图片</div>
+	<div class="box3"></div>
+
+</body>
+</html>
+
+<!-- 
+单词表
+image
+url
+repeat
+ -->

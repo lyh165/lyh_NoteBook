@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>math 对象</title>
+	<script type="text/javascript">
+
+	var a = 10;
+	var b = 20;
+
+	// var num = Math.random()*(b-a)+a;
+	// alert(num);
+
+	// floor 向下取整 5.3、5.6、5.9 都是等于5 
+	// ceil 向上取整 5.3、5.6、5.9 都是等于6
+	
+	var arr = [];
+	for (var i = 0; i<20;i++){
+		// var num = Math.floor(Math.random()*(b-a+1)+a);
+		var num = Math.ceil(Math.random()*(b-a)+a); // 不会出现10 因为是向上取整
+
+		arr.push(num);
+	}
+	alert(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

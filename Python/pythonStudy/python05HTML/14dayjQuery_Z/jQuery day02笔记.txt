@@ -1,0 +1,43 @@
+jQuery day02笔记
+
+1.jQuery复习
+		/** ready的简写 */
+		$(function(){
+			// 链式操作
+			$('.list').css({background:'gold'}).children().css({background:'red',marginBottom:10});
+
+			// 获取索引值
+			alert($('.list li').eq(2).index());
+
+			// 点击
+			$('.list li').click(function(){
+				alert($(this).index());
+
+				$(this).css({fontSize:30});
+			})
+
+			// 效果
+			$('#btn').click(function(){
+				$('.list').slideToggle();
+			})
+		})
+
+2.jQuery的animate(动画)
+	$('#div1').animate({width:200,height:200},2000,'swing',function(){
+		//alert('动画完了');
+		$(this).animate({marginLeft:500},1000,function(){
+				$(this).animate({marginTop:500},1000);
+		});
+	});		
+
+3.jQuery循环
+	$('.list li').each(function(index){
+				//alert(index);
+				$(this).html(index);
+			}) 		
+
+4.手风琴
+5.元素绝对盒子
+	offset 获取绝对位置
+	outerWidth 宽 outerHeight 高		
+	mouseover mouseout 鼠标悬浮在上面、和移除		

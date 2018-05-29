@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call和apply</title>
+	<script type="text/javascript">
+			function aa(a,b){
+				alert('我的this是'+this+'我的a是'+a+'我的b是'+b);
+			}
+
+			/*
+			call 和 apply的区别
+			都是改变this对象
+			call 第二个参数是想怎么写就怎么写
+			apply 第二个参数是用数组来写
+			 */
+			//aa.call('abc',2,3);
+			aa.apply('abc',[2,3]);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

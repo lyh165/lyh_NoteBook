@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性盒模型布局</title>
+	<style type="text/css">
+		ul{
+			margin: 0;
+			list-style: none;
+			padding: 0;
+
+			width: 500px;
+			height: 400px;
+			border:5px solid #000;
+			background-color: gold;
+			margin: 50px auto 0;
+
+			display: flex;
+			
+
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			/*
+			flex-start 	多行整体靠上排列
+			flex-end 	多行整体靠下排列		
+			flex-center 多行整体垂直居中		
+			space-between  第一行子元素靠上定格，最后一行子元素靠右定格 ，中间的等分垂直间距;
+			space-around  第一行子元素和最后一行子元素靠右的间距是中间间距的一半，中间行间距都是等格分割
+			 */
+			align-content: space-around;
+
+		}
+
+		ul li{
+			width: 100px;
+			height: 50px;
+			margin: 10px;
+			background-color: red;
+			line-height: 50px;
+			text-align: center;
+			color: #fff;
+		}
+
+	
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li>11</li>
+
+	</ul>
+</body>
+</html>

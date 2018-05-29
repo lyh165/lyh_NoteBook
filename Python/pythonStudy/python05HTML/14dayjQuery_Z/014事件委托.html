@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托</title>
+	<style type="text/css">
+		.list{
+			list-style: none;
+		}
+		.list li{
+			height: 30px;
+			background-color: gold;
+			margin-bottom: 30px;
+			color: #fff;
+		}
+	</style>
+
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+	<script type="text/javascript">
+		 $(function(){
+// 多次绑定 性能不高
+ 			/*
+		 	$('.list li').click(function(){
+		 		alert($(this).html());
+		 	})
+		 	*/
+		 
+// delegate 事件委托 (操作多个对象,不需要绑定子元素，绑定父元素 提高性能)
+		$('.list').delegate('li','click',function(){
+			alert($(this).html());
+//undelegate 取消委托 
+			$('.list').undelegate();			
+		});	
+
+		 })
+	</script>
+</head>
+<body>
+
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+</html>

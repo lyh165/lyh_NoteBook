@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+	<script type="text/javascript">
+
+		// 定义一个正则的规则：
+		// 函数 test、match、search
+		// 修饰 ^、$、g
+		// 量词 +
+		// 文字 \d 、\w
+//第一种定义方法
+		var re = new RegExp('a','ig');
+
+//第二种定义方法
+		var re2 = /ad/ig;
+
+// 匹配		
+		var str = 'abc';
+		//alert(re2.test(str));  弹出false
+
+// 修饰 ^开头 $结尾
+// 量词	+多个
+		var re3 = /^\d+$/;
+		var str3 = '123abc';
+// test有懒惰特性 只会匹配包含的 (所以需要修饰符号)
+		//alert(re3.test(str3));
+
+// 	w 任意字母、数字 不包含符号
+		var re4 = /^\w+$/;
+		var str4 = '@as&d';
+		//alert(re4.test(str4));
+// 修饰参数
+// g 全局搜索
+		var str5 = '123dasdkah456djasld789dadhasdkjah222dashdakj333';
+		var re5 = /\d+/g;
+// match方法	 只会匹配前面一段
+		var arr = str5.match(re5);
+		alert(arr);
+
+// search (获取第一个搜索到的，在哪个位置)
+	var re6 = /d/;
+	alert(str5.search(re6));
+// replace (替换)用于过滤文档
+	var str6 = str5.replace(re5,'*');
+	alert(str6);	
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

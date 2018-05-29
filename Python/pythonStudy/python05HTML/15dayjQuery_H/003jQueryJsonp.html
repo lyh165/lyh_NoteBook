@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery的jsonp</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+	// dataType: 'jsonp' 就是跨域请求
+		$.ajax({
+			url: 'data.js',
+			type: 'get',
+			dataType: 'jsonp',
+			jsonpCallback:'aa'
+		})
+		.done(function(data) {
+			console.log(data);
+			alert(data.name);
+		})
+		.fail(function() {
+			console.log("error");
+		});
+
+		/*
+	
+		 使用360搜
+		 输入 a
+		 查看 network中的 all 的name 会出现搜索的结果
+		 下面的链接 是返回搜索出来的json结果
+		https://sug.so.360.cn/suggest?callback=suggest_so&encodein=utf-8&encodeout=utf-8&format=json&fields=word&word=ab
+		*/
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

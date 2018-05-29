@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css权重</title>
+	<style type="text/css">
+	
+/*!important 权重是10000*/
+	/*标签和伪元素 选择器 权重是1*/
+	/*权重是 10000+1 = 100001*/
+/*		div{
+			color: red!important;
+		}*/
+
+/*<!-- 内联选择器 权重是 1000 -->*/	
+	/*style="color: pink"*/
+
+/*id选择器 权重是 100*/
+/*		#box{
+			color: blue;
+		}*/
+/*类选择器 权重是10*/
+		/*.con{
+		}*/
+
+/*类选择器 + id修饰 就是 100 + 1*/
+	#body1 .con{
+		color: red;
+	}
+	/*权重 10+1*/
+	body .con2{
+		color: yellow;
+	}
+
+	</style>
+</head>
+<body id='body1'>
+	<!-- 行间样式 权重是 1000 -->
+	<!-- <div id="box" style="color: pink" class="con">这是一个div元素</div> -->
+
+	<div class="con con2">这是一个div元素</div>
+</body>
+</html>

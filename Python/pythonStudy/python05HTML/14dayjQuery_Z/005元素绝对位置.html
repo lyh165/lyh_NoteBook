@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素绝对盒子</title>
+	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+// offset 获取绝对位置
+			var $pos = $('.pos');			
+			var pos = $pos.offset();
+// 	outerWidth 宽 outerHeight 高		
+			var w = $pos.outerWidth();
+			var h = $pos.outerHeight();
+			alert(w);
+			//console.log(pos);
+			//alert(pos.left);
+			document.title = pos.left + '|' + pos.top;
+			$('.pop').css({left:pos.left+w,top:pos.top});
+// mouseover mouseout 鼠标悬浮在上面、和移除
+			$pos.mouseover(function(){
+				$('.pop').show();
+			})
+			$pos.mouseout(function(){
+				$('.pop').hide();
+			})
+//
+//
+//
+
+		})
+	</script>
+	<style type="text/css">
+		.con{
+			width: 600px;
+			height: 600px;
+			margin:50px auto 0;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			margin-bottom: 10px;
+			background-color: gold;
+		}
+
+		.pos{
+			margin-left: 500px;
+		}
+		.pop{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: fixed;
+			left:0;
+			top: 0;
+			display: none;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box pos"></div>
+			<div class="box"></div>
+			<div class="pop">
+				提示信息！
+			</div>
+
+	</div>
+
+</body>
+</html>

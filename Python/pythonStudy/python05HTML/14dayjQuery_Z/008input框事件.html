@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input框事件</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			//$('#txt01').focus();
+// 获取焦点 focus			
+			$('#txt01').focus(function() {
+				//alert('foucus');
+			});
+// 失去焦点 blur
+			$('#txt01').blur(function() {
+				alert('blur');
+			});
+// 内容修改 change
+			$('#txt01').change(function() {
+				alert('change');
+			});
+// 键盘松开的时候 keyup
+			$('#txt01').keyup(function() {
+				alert('keyup');
+			});
+		})
+	</script>
+</head>
+
+<body>
+	<input type="text" name="" id="txt01">
+</body>
+</html>

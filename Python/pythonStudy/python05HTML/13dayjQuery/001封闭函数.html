@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封闭函数</title>
+	<script type="text/javascript">
+		var aa = function(){
+			alert('test01');
+		};
+// 写封闭函数的时候 ，注意上面的function末尾一定要加上; 否则系统会默认跟上面是关联起来的
+// 也可以在写封闭函数的前面添加一个 ;
+// 	;(function(){
+
+		(function(){
+			var aa = function(){
+				alert('test02');
+			}
+			aa(); // 在内部调用aa的函数 test02
+		})();
+		aa(); // 调用 test1 
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

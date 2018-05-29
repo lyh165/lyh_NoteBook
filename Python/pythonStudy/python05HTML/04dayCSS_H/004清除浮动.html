@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.con,.con2{
+			width: 300px;
+			/*height: 300px;*/
+			border:1px solid #000;
+			margin: 100px auto 0;
+			font-size: 0;
+		}
+
+		.con a{
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			background-color: gold;
+			font-size: 16px;
+			margin: 20px;
+			text-align: center;
+			line-height: 50px;
+			text-decoration: none;
+		}
+		.con2 {
+			/*1、清除浮动 
+			不过后面使用定位，overflow会出问题*/
+			/*overflow: hidden;*/
+
+		}
+		.con2 a{
+			width: 50px;
+			height: 50px;
+			background-color: gold;
+			font-size: 16px;
+			margin: 20px;
+			text-align: center;
+			line-height: 50px;
+			text-decoration: none;
+			float: left;
+		}
+		
+		/*3、清除浮动 推荐使用的方法
+			在盒子最后添加一个空的东西
+			最后设置成clear:both
+		*/
+/*		.clearfix:after{
+			content:"";
+			display: table;
+			clear: both;
+		}*/
+		
+		/*合并写成一个clearfix*/
+		.clearfix:before,.clearfix:after{
+			content:"";
+			display: table;
+		}
+		.clearfix:after{
+			clear:both;
+		}
+		/*zoom ：1 用来兼容IE的
+		zoom 1 是IE用来进行缩放网页的 */
+		.clearfix{
+			zoom:1;
+		}
+
+		.con3{
+			width: 300px;
+			/*height: 300px;*/
+			border:1px solid #000;
+			margin: 100px auto 0;
+		}
+		.con3 span{
+			background-color: gold;
+			/*通过display转换成行内块元素是有间距的
+				通过浮动转换成行内块元素是没有间距的
+			*/
+			/*display: inline-block;*/
+			float: left;
+		}
+
+	</style>
+</head>
+<body style="height: 2000px">
+	<div class="con">
+		<a href="">1</a>
+		<a href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<a href="">5</a>
+		<a href="">6</a>
+		<a href="">7</a>
+		<a href="">8</a>
+		<a href="">5</a>
+		<a href="">6</a>
+		<a href="">7</a>
+		<a href="">8</a>
+	</div>
+
+	<div class="con2 clearfix">
+		<a href="">1</a>
+		<a href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<a href="">5</a>
+		<a href="">6</a>
+		<a href="">7</a>
+		<a href="">8</a>
+		<a href="">5</a>
+		<a href="">6</a>
+		<a href="">7</a>
+		<a href="">8</a>
+	</div>
+	
+	<!-- 2、清除浮动 不推荐使用 -->
+	<!-- <div style="clear:both"></div> -->
+
+	
+	<div class="con3 clearfix">
+		<span>span元素</span>
+		<span>span元素</span>
+		<span>span元素</span>
+		<span>span元素</span>
+		<span>span元素</span>
+
+	</div>
+	
+</body>
+</html>
+
+<!-- 单词表
+
+ -->

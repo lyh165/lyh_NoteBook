@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010函数用变量方式定义</title>
+	<script type="text/javascript">
+
+		/*
+		myalert(); 
+		function myalert(){
+			alert('hello!');
+		}
+		*/
+// 函数用变量方式定义
+		var myalert = function(){
+			alert('hello');
+		}
+		myalert();
+
+// 封闭函数的其他写法 
+// 在匿名函数前面 加上 ！  或者 ~
+	~function(){
+			var str = '欢迎访问我的主页';
+			alert(str);
+	}();
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

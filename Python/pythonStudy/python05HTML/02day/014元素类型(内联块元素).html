@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内联块元素</title>
+	<style type="text/css">
+		.con ,.con2{
+				width: 500px;
+				height: 300px;
+				border: 1px solid #333;
+				margin: 50px auto 0;
+				font-size: 0;
+			}
+	
+		.con a{
+			background-color: gold;
+			width: 150px;
+			height: 50px;
+			/*display 将内联元素 转成内联块元素(inline-block) 之后
+			就可以设置宽高*/
+			display: inline-block;
+			margin: 10px 0;
+			padding: 5px;
+			font-size: 20px;	
+			/*设置文字居中 设置高度和 当前的标签高度一致即可*/
+			line-height: 50px;
+			text-decoration: none;
+		}
+		.con span
+		{
+			background-color: gold;
+			display: inline-block;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 使用display进行转换 -->
+
+
+	<div class="con">
+		<a href="#">这是一个a标签</a>
+		<a href="#">这是第2个a标签</a>
+		<a href="#">这是第3个a标签</a>
+		<a href="#">这是第4个a标签</a>
+		<a href="#">这是第5个a标签</a>
+		<a href="#">这是第6个a标签</a>
+		<span>这是一个span标签</span>
+	</div>
+</body>
+</html>
+
+<!-- 
+单词表
+display
+inline
+block
+ -->

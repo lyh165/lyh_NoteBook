@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation 动画</title>
+	<style type="text/css">
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: gold;
+			/*动画名称 动画时间 动画曲线 动画延迟的时间 动画次数(infinite无限次) 动画是否返回 动画完成是否保存最后一个值(保存最后一个)
+				both向前向后填充
+			*/
+			animation: moving 1s ease 1s 5  alternate both;
+			
+			/*运动状态 暂停*/
+			/*animation-play-state: paused;*/
+
+		}
+		.box:hover{
+			/*运动状态 运行*/	
+			/*animation-play-state: running;*/
+		}
+		@keyframes moving{
+			from{
+				width: 200px
+			}
+
+			to{
+				width: 500px;
+			}
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

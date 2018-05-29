@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型模式</title>
+	<script type="text/javascript">
+		function Person(name,age,job){
+			this.name = name;
+			this.age = age;
+			this.job = job;
+		}
+//将方法绑定到原型里面去 
+		Person.prototype.showname = function(){
+			alert(this.name);
+		}
+		Person.prototype.showage = function(){
+			alert(this.age);
+		}
+		Person.prototype.showjob = function(){
+			alert(this.job);
+		}
+
+
+		var p = new Person('l',19,'py');
+		var p2 = new Person('j',11,'ios');
+//  改写原型的绑定方法
+		p.showage = function() {
+			alert('我的年龄是'+this.age);
+		}
+		p.showage();
+		p2.showage();
+		alert(p.showage == p2.showage);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

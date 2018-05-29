@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS变量和函数预解析</title>
+	<script type="text/javascript">
+		// alert(a); // 弹出 undefined
+		// alert(c); 
+		/* 
+		报错 
+		002JS变量和函数预解析.html:8 Uncaught ReferenceError: c is not defined
+    at 002JS变量和函数预解析.html:8
+    	c没有声明
+    */
+
+		var a = 123;
+
+		// 弹出hello！
+		myalert();
+
+		function myalert(){
+			alert('hello!');
+		}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

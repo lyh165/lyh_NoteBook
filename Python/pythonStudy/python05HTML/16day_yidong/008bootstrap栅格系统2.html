@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bootstrap栅格系统</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript">
+
+	</script>
+	<style type="text/css">
+		.pic{
+			height: 200px;
+			/*最大宽度*/
+			max-width: 200px;
+			background-color: gold;
+			border: 1px solid #000;
+			margin: 15px auto;
+		}
+		div[class*='col-']{
+			background-color: cyan;
+		}
+	</style>
+	
+</head>
+<body>
+	
+	<!--
+	每一行占12份网格
+	可以是1个、2个、3个、4个、6个一排
+	不能是5个一排
+	 -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"></div></div>
+
+		</div>
+	</div>
+
+</body>
+</html>

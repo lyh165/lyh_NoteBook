@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包的用途2-私有变量计算器</title>
+	
+	<script type="text/javascript">
+		var count = (function(){
+			var a = 0;
+			function bb(){
+				a++;
+				return a; // 每次计算返回a
+			}
+			return bb;
+
+		})();
+
+		alert(count());
+		alert(count());
+
+		var c = count();
+		alert(c);
+
+	</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

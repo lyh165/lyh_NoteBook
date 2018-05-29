@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 新选择器</title>
+	<style type="text/css">
+		ul{
+			list-style: none;
+		}
+		li{
+			background-color: gold;
+			margin-bottom: 10px;
+		}
+/*一、E:nth-child(n) */
+		/*
+		li:nth-child(1) {
+			background-color: red;
+		}
+		li:nth-child(3) {
+			background-color: pink;
+		}
+		*/
+		
+		/*li:nth-child(2n+1) {
+			background-color: red;
+		}*/
+
+
+/*二、E:nth-of-type(n) */
+	li:nth-of-type(2n) {
+			background-color: red;
+	}
+
+
+	.box div{
+		background-color: gold;
+		margin-bottom: 10px;
+	}
+
+/*	.box div:nth-child(2){
+		background-color: red;
+	}*/
+
+/* 在不同类型里面进行指定 使用nth-child 修改没有效果
+						使用 nth-of-type 才会有效果  */
+
+	/*第三个子元素，而且这个子元素的类型是div,就匹配*/
+	/*.box div:nth-child(3){
+		background-color: blue;
+	}*/
+
+	/*父级下面第三个div元素，碰到不同类型的元素跳过 */
+	/*修改div的第三个元素 */
+	.box div:nth-of-type(3) {
+			background-color: red;
+	}
+
+	</style>
+
+</head>
+<body>
+	<h3>ul容器</h3>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+
+
+	<h3>div容器</h3>
+	<div class="box">
+		<div>1</div>
+		<div>2</div>
+		<p>p标签</p>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+	</div>
+
+
+</body>
+</html>

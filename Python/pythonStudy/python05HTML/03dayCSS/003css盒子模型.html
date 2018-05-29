@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css盒子模型</title>
+	<style type="text/css">
+		.box
+		{
+			width: 200px;
+			height: 100px;
+			background-color: gold;
+
+			/*border-top-width: 10px;
+			border-top-color: #000;
+			实现 solid 虚线 dashed 点线 dotted
+			border-top-style: solid;*/
+
+			/*简写成一句*/
+		/*	border-top:10px solid #000;
+			border-left:10px dashed #000;
+			border-right:10px dotted #000;
+			border-bottom:10px solid #000;*/
+
+/* border 四种样式统一*/
+			border: 10px solid #000;
+
+
+/*			padding-top: 20px;
+			padding-left: 40px;
+			padding-right: 100px;
+			padding-bottom: 200px;*/
+			
+/*padding 四种样式统一
+			顺序方式 ，顺时针（上右下左）
+			*/
+/*			padding: 20px 100px 200px 40px;
+*/
+			/*三个值设置
+			上 左右 下
+			*/
+			/*padding: 20px 100px 200px;*/
+
+			/*2个值得设置
+				上下 左右*/
+				/*padding: 20px 100px;*/
+
+			/*1个值 
+				上下左右*/
+			padding: 100px;	
+
+/*margin 四种样式统一 设置方法和padding一样的
+		margin 外边距合并 会使用最大值得那个 比如top是50 bottom是100 会取100
+		一般开发只设置top
+
+*/
+/*			margin-top: 50px;
+			margin-left: 100px;
+			margin-right: 200px;
+			margin-bottom: 300px;*/
+			/*margin: 50px 200px 300px 100px;*/
+
+/*设置盒子水平居中*/
+			margin: 100px auto; 
+		}
+	</style>
+</head>
+<body>
+	<!--
+	一个标签包含
+	content 内容
+	padding 内容里面的间距
+	border 内容外面的边框间距
+	margin 内容外面边框以外的间距 
+	 -->
+
+	<!-- div可以称为一个元素、标签、盒子 -->
+
+	 <div class="box">元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式。盒子模型示意图如下：</div>
+
+	  <div class="box">元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式。盒子模型示意图如下：</div>
+</body>
+</html>
+
+<!-- 
+单词表
+dashed
+dotted
+top
+boottom
+left
+right
+
+padding
+ -->

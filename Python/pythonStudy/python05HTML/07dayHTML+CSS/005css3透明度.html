@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css透明度</title>
+	<style type="text/css">
+	body{
+		background-color: cyan;
+
+	}
+/*透明度 opacity*/
+		.box{
+			width: 200px;
+			height: 200px;
+			/*background:url(images/location_bg.jpg);*/
+			background-color: gold;
+			margin: 50px auto 0;
+			border:2px solid #000;
+			border-radius: 50%;
+			/*opacity 不兼容ie
+			需要加上filter: alpha(opacity=透明度)*/
+			opacity: 0.5;
+			filter: alpha(opacity=50);
+			text-align: center;
+			line-height: 200px;
+		}
+
+		.box2{
+			width: 200px;
+			height: 200px;
+			/*background:url(images/location_bg.jpg);*/
+			margin: 50px auto 0;
+			border-radius: 50%;
+			/*opacity 不兼容ie
+			需要加上filter: alpha(opacity=透明度)*/
+			text-align: center;
+			line-height: 200px;
+
+			/*颜色透明 字体不透明
+			使用rgba*/
+			background-color: rgba(255,215,0,0.3);
+			border:2px solid rgba(0,0,0,0.5);
+
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box">床前明月光</div>
+	<div class="box2">床前明月光</div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: gold;
+}
+.box2 {
+  width: 200px;
+  height: 300px;
+  border: 2px solid gold;
+  color: red;
+}

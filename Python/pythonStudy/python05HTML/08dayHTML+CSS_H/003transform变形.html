@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transform变形</title>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+			margin: 50px auto 0;
+			/*不会影响文档流*/
+			/*1.位移*/
+			/*transform: translate(50px,50px);  */
+
+			/*动画效果设置时间 运动曲线*/
+			transition: all 1s ease;
+		}
+		.box:hover{
+			transform: translate(50px,50px);  
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+			margin: 50px auto 0;
+			/*2.旋转*/
+			/*transform: rotate(30deg);*/
+
+			/*动画效果设置时间 运动曲线*/
+			transition: all 1s ease;
+		}
+		.box2:hover{
+			transform: rotate(360deg);
+		}
+		.box3{
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+			margin: 50px auto 0;
+			/*3.缩放*/
+			/*transform: scale(0.5,0.8);*/
+
+			/*动画效果设置时间 运动曲线*/
+			transition: all 1s ease;
+		}
+		.box3:hover{
+			transform: scale(0.5,0.8);
+		}
+		.box4{
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+			margin: 50px auto 0;
+			/*4.斜切*/
+			/*transform: skew(45deg,0);*/
+			/*动画效果设置时间 运动曲线*/
+			transition: all 1s ease;
+		}
+		.box4:hover{
+			transform: skew(45deg,0);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+
+
+</body>
+</html>

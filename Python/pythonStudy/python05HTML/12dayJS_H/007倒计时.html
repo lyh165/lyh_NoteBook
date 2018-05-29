@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	
+	<script type="text/javascript">
+	window.onload = function(){
+		var oDiv = document.getElementById('div');
+
+
+		function timeleft(){
+
+			// 实际开发中 次事件从服务器获取
+		var now = new Date(); // 当前时间 (一般服务器获取，用户可以设置自己的当前时间)
+		var future = new Date(2018,4,6,1,44,0); // 未来时间 (月份是从0~11开始的)
+		//alert(future-now); 当前时间到截止时间 相差多少毫秒 (1秒=1000毫秒)
+		var lefts = parseInt((future-now)/1000); // 未来时间和现在时间相差多少秒
+		// alert(left);
+		var day = parseInt(lefts/86400); // 查看剩余多少天(总时间/一天的秒数)
+		var hour = parseInt((lefts%86400)/3600); // 查看剩余多少小时(总时间%一小时取余)/3600
+		var minute = parseInt(((lefts%86400)%3600)/60);
+		var second = lefts%60;
+
+		// 如果时间是负数 就下架(或者跳转页面)
+		if(lefts<=0)
+		{
+			window.location.href = "http://www.baidu.com";
+		}
+
+		oDiv.innerHTML = '距离2018年5月10日晚24时还有'+todou(day)+'天'+todou(hour)+'时'+todou(minute)+'分'+todou(second)+'秒';
+		}
+
+		timeleft(); // 延迟1秒，所以调用一下
+
+		setInterval(timeleft,1000);
+		
+
+	}
+
+
+	function todou(num){
+		if (num<10){
+			return '0'+num;
+		}
+		else{
+			return num;
+		}
+	}
+
+
+	</script>
+
+</head>
+<body>
+	<div id="div"></div>
+</body>
+</html>

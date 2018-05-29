@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>margin-top坍陷</title>
+	<style type="text/css">
+		.con{
+			width: 298px;
+			height: 198px;
+			background-color: gold;
+
+		
+
+			/*line-height:200px;*/
+			/*padding-top:50px;*/
+
+			/*第一种解决塌陷的方法*/
+			/*border:1px solid gold;*/
+			/*第二种方法*/
+			/*overflow: hidden;*/
+		}
+
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			margin-top: 50px;
+		}
+		
+		/*第三种方法解决塌陷:伪元素方法
+			解决坍陷的问题*/
+		.clearfix:before{
+			content: "";
+			display: table;
+		}
+
+	</style>
+</head>
+<body>
+
+<!-- 塌陷
+	就是在一个标签、元素、盒子上面 
+	再添加一个标签、元素、盒子
+	然后在里面的时候 设置margin-top就会出现塌陷问题。
+	margin-top的效果会是在最外面的标签、元素、盒子里面设置margin-top 从而达不到我们想要的效果 -->
+	<div class="con">
+		<div class="box"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素溢出</title>
+	<style type="text/css">
+		.con{
+			width: 500px;
+			height: 300px;
+			border:1px solid #333;
+			
+			/*上下间距 50 左右间距是居中 下面间距可以设置为0 不写就是0*/
+			margin: 50px auto 0;
+			
+			/*overflow作用是 
+				hidden 隐藏溢出的值 
+				默认是visble
+				scroll 可以滚动的*/
+			/*overflow: hidden;*/
+			/*不管是否溢出 都会显示滚动条*/
+			/*overflow: scroll;*/
+
+			/*自动样式 如果子元素 高度大于 父元素 则显示滚动条
+				如果子元素 高度小于 父元素 则不显示滚动条*/
+			/*overflow: auto;*/
+		}
+
+		.box{
+			width: 400px;
+			height: 450px;
+			background-color: gold;
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<div class="box">元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式。盒子模型示意图如下：元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式。盒子模型示意图如下：元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式。盒子模型示意图如下：</div>
+	</div>
+</body>
+</html>
+
+<!-- 
+单词表
+overflow
+ -->

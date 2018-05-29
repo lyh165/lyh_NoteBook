@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内联元素</title>
+	<style type="text/css">
+	.con ,.con2{
+		width: 500px;
+		height: 300px;
+		border: 1px solid #333;
+		margin: 50px auto 0;
+
+		/*
+		1.设置a标签的父级标签的 font-size 0; 可以解决间隔问题
+		2.也可以在标签的内部 不进行换行处理
+
+		 */
+		font-size: 0;
+
+	}
+	
+	.con a{
+		background-color: gold;
+
+		/*内联标签 不支持宽高 上下*/
+		width: 500px;
+		height: 300px;
+		/*margin-top: 50px;*/
+		/*margin-left: 30px;*/
+/*		margin-right: 30px;
+		margin-bottom: 50px;*/
+
+
+		padding :0px 20px; 
+		font-size: 20px; 
+	}
+	
+	.con2{
+		text-align: center;
+		line-height: 300px;
+	}
+
+	.con2 a
+	{
+		background-color: gold;
+		font-size: 20px;
+	}
+
+	</style>
+</head>
+<body>
+<!-- 内联标签 
+		a、span、em、b、strong
+
+	margin 是属于外面的东西
+	padding 是属于盒子里面的东西
+-->
+	<div class="con">
+		<a href="#">这是第一个a标签</a>
+		<a href="#">这是第2个a标签</a>
+		<a href="#">这是第3个a标签</a>
+		<a href="#">这是第4个a标签</a>
+		<a href="#">这是第5个a标签</a>
+		<a href="#">这是第6个a标签</a>
+		<a href="#">这是第7个a标签</a>
+
+	</div>
+
+	<div class="con2">
+		<a href="#">这是第一个a标签</a>
+	</div>
+</body>
+</html>
+
+<!-- 
+单词表
+border
+solid
+margin
+auto
+padding
+ -->

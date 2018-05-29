@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素旋转2</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+			float: left;
+			margin: 30px;
+			transition: all 500ms ease;
+		}
+/*设置盒子的旋转中心点*/
+		div:nth-child(1)
+		{
+			/*设置旋转的中心点*/
+			transform-origin: left center;
+		}
+
+		div:nth-child(2)
+		{
+			/*设置旋转的中心点*/
+			transform-origin: left top;
+		}
+
+		div:nth-child(3)
+		{
+			/*设置旋转的中心点*/
+			transform-origin: 50px 50px;
+		}
+		div:hover{
+
+			transform: rotate(-90deg);
+		}
+
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

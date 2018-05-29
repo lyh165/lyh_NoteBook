@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery循环</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			// $('.list li').html('111');
+			//$('.lst li').css({background:'gold'});
+
+// 循环
+			$('.list li').each(function(index){
+				//alert(index);
+				$(this).html(index);
+			}) 						
+		})
+	</script>
+</head>
+<body>
+	<ul class="list">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

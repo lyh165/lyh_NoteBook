@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标移入移出事件</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+// mouse 鼠标 	over	上面	
+// mouse 鼠标 	out	退出	
+		
+ 			/*
+ 			进入子元素时会触发
+			 $('#div1').mouseover(function(){
+				$(this).animate({marginTop:50});
+			});
+			$('#div1').mouseout(function(){
+				$(this).animate({marginTop:100});
+			})
+			*/
+		
+// 子元素不会触发
+// mouseenter
+// mouseleave
+			/*		
+		 	$('#div1').mouseenter(function(){
+				$(this).animate({marginTop:50});
+			});
+			$('#div1').mouseleave(function(){
+				$(this).animate({marginTop:100});
+			})
+			*/
+		
+// 简化写法
+			// 通过hover方式
+			$('#div1').hover(function(){
+				$(this).stop().animate({marginTop:50});
+			},function(){
+				$(this).stop().animate({marginTop:100});
+			});		
+		
+		})
+	</script>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+			margin:100px auto 0;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="div1" class="box">
+		<div class="son"></div>
+	</div>
+	
+</body>
+</html>

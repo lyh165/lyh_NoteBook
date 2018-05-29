@@ -1,0 +1,117 @@
+js笔记day02
+
+1.变量和函数的预解析
+	调用变量，变量可以写在调用变量的后面。这就是系统的预解析。
+	alert(a);
+	var a = 123;
+	函数的预解析(该设计用来 前面调用函数，后面用于函数的声明的实现)
+		myalert();
+		function myalert(){
+			alert('hello!');
+		}
+
+2.匿名函数
+	var oDiv = document.getElementById('div1');
+			oDiv.onclick = function (){
+				alert('hello');
+			}		
+
+3.函数的传递参数
+		var oDiv = document.getElementById('div1');
+	
+		changestyle('color','gold');
+		changestyle('background','red');
+		changestyle('width','300px');
+		changestyle('height','300px');
+		changestyle('fontSize','30px');
+
+
+		function changestyle(styl,val){
+			oDiv.style[styl] = val;
+		}
+
+4.函数的return、parseInt的转换
+		function add(a,b){
+			var c = parseInt(a) + parseInt(b); // parseInt 转换成int
+			alert('计算完成');
+			// return 返回函数设定的值，同时结束函数的运行
+			return c;
+		}		
+5.条件语句判断
+	if(oDiv.style.display == 'block' || oDiv.style.display == '')
+			{
+				oDiv.style.display = 'none';
+			}
+			else
+			{
+				oDiv.style.display = 'block';
+			}
+6.switch语句
+	switch (today)
+	{
+		case 1:
+		alert('语文');
+		break;
+		case 2:
+		alert('数学');
+		break;
+		case 3:
+		alert('英语');
+		break;
+		case 4:
+		alert('美术');
+		break;
+		case 5:
+		alert('舞蹈');
+		break;
+		default:
+		alert('不补习');
+		break;
+	}	
+
+7.js数组的声明和使用
+	 var arr02 = [1,2,3,'abc']; // 性能更高
+	 二维数组
+ 	 var arr03 = [[1,2,3],['a','b','c'],[true,false]];
+	 alert(arr03.length); // 弹出3
+	 alert(arr03[1].length); // 弹出3
+	 alert(arr03[1][2]);	// 弹出c
+
+8.js的document对象的函数 getElementsByTag
+	// 根据id去查找
+	var oList = document.getElementById('list01');
+	// 根据类型名字去查找
+	var aLi = oList.getElementsByTagName('li');
+
+9.数组去重(也就是说相同的部分去除掉)
+	var aRr = [1,2,3,4,5,6,7,8,9,4,2,3,1,5,7,6,8,9,5,2,1,2];
+	var aRr2 = [];
+	for(var i = 0;i<aRr.length;i++)
+	{
+		if(aRr.indexOf(aRr[i])==i)
+		{
+			aRr2.push(aRr[i]); // 相同才会push到 aRr2里面
+		}
+	}	
+10.字符串的处理方法
+	+
+	parseInt
+	parseFloat
+	split
+11.调试的方法
+	// 调试的方法
+	// 1.alert
+	// 2.Console.log 打印方式 (在浏览器里面打印)	
+	// 3.document.title
+12.字符串的常用方法
+	1、字符串合并操作：“ + ”
+	2、parseInt() 将数字字符串转化为整数
+	3、parseFloat() 将数字字符串转化为小数
+	4、split() 把一个字符串分隔成字符串组成的数组
+	5、charAt() 获取字符串中的某一个字符
+	6、indexOf() 查找字符串是否含有某字符
+	7、substring() 截取字符串 用法： substring(start,end)（不包括end）
+	8、toUpperCase() 字符串转大写
+	9、toLowerCase() 字符串转小写	
+
+13.	作业计算器

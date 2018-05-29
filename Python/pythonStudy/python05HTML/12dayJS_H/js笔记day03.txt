@@ -1,0 +1,78 @@
+js笔记day03
+
+
+1.NaN(not a number 不是一个数字) 非数字
+2.isNaN 是不是 一个非数字
+
+3.定时器延迟执行，并且只执行一次
+	setTimeout(函数/方法,延迟多少毫秒执行);
+
+4.时钟的实现
+	倒计时实现
+
+5.全局变量、局部变量
+6.封闭函数的定义并且调用
+	(function(){...})();
+	其他写法
+	// 在匿名函数前面 加上 ！  或者 ~
+	~function(){
+			var str = '欢迎访问我的主页';
+			alert(str);
+	}();
+7.函数用变量方式定义
+
+	var myalert = function(){
+		alert('hello');
+	}
+	myalert();	
+
+8.闭包的定义和使用
+	function aa(b){
+		var a = 12;
+		function bb(){
+			alert(a);
+			alert(b);
+		}
+		return bb;
+	}
+	var cc = aa(24);
+	cc();
+
+使用封闭函数做成闭包
+	var cc =(function(b){
+			var a = 12;
+			function bb(){
+				alert(a);
+				alert(b);
+			}
+			return bb;
+		})(24);
+		cc();
+
+8.闭包的用途1-存储循环索引值		
+		for(var i = 0;i < aLi.length;i++)
+		{
+			/*
+			此时这里每次获取都是8
+			aLi[i].onclick = function(){
+				alert(i);
+			}*/
+		// 封闭函数闭包
+			(function(i){
+				aLi[i].onclick = function(){
+				alert(i);
+			}
+			})(i);
+
+9.保存源页面
+		var backurl = document.referrer;
+
+10.获取地址栏参数
+	// search		
+		var Dat = window.location.search;
+	// hash
+ 		var hash = window.location.hash;			
+
+11.内置对象(math)
+	// floor 向下取整 5.3、5.6、5.9 都是等于5 
+	// ceil 向上取整 5.3、5.6、5.9 都是等于6

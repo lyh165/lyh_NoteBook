@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+	/*
+		function myalert(){
+			var str = '欢迎访问我的主页';
+			alert(str);
+		}
+		myalert();
+		*/
+		var str = 'abc';
+
+
+// 封闭函数 (防止修改全局变量)
+// 写法 (function(){...})
+// 调用 (function(){...})();
+		(function(){
+			var str = '欢迎访问我的主页';
+			alert(str);
+		})();
+
+		
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,52 @@
+js笔记day01
+
+1、定义变量
+	var a = 123
+
+2.document对象
+	用来获取html的一些(标签、元素、控件)
+	比如：获取一个 id=div1的title属性	,	并且修改成hello
+	<script type="text/javascript">
+		document.getElementById('div1').title = 'hello';	
+	</script>
+
+3.js的匿名函数(文件执行完之后最后执行的函数)
+	window.onload = function(){... 执行语句}
+
+4.js 操作变量的属性
+	var oA = document.getElementById('link1');
+			oA.href = "http://baidu.com";	
+
+5.js style的属性
+	 var oDiv = document.getElementById('div1');
+		 oDiv.style.color = 'red';
+		 oDiv.style.background = 'gold';
+		 oDiv.style.fontSize = "30px";			
+
+6.js操作系统的class属性 使用className进行修改
+	var oDiv = document.getElementById('div1');
+			oDiv.className = 'box02';		 
+
+7.js通过[]操作 变量声明的属性
+	var oDiv = document.getElementById('div1');
+	var attr = 'color';
+	//  通过[]操作属性可以写变量
+	oDiv['style'][attr] = 'red';			
+
+8 js 通过 innerHTML可以读写元素
+// 通过 innerHTML可以读写元素 包括的内容
+		alert(oDiv.innerHTML);	
+
+9. 函数的调用(行间调用、内部调用)
+		// 内部调用 推荐使用
+		window.onload = function(){
+		var oBtn01 = document.getElementById('btn01')
+		var oBtn02 = document.getElementById('btn02')
+		oBtn01.onclick = skin01;
+		oBtn02.onclick = skin02;
+	}		
+
+	<!--  行间调用函数 
+	<input type="button" name="" value="皮肤01" onclick="skin01()" id="btn01">
+	<input type="button" name="" value="皮肤02" onclick="skin02()" id="btn02">
+	-->

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>14字符串处理方法</title>
+	<script type="text/javascript">
+// + 字符串拼接 
+	var name = 'lyh';
+	var age = 18;
+	//alert('我的名字叫'+ name +',我的年龄是'+age+'岁;');
+// parseInt 转换成int类型
+	var a = 12;
+	var b = '23';
+	var c = 5.6;
+	var d = '123abc';
+	var e = 4.2;
+	//alert(a+b); // 弹出1223
+	//alert(parseInt(a)+parseInt(b));
+	//alert(parseInt(c)); // 弹出 5
+	//alert(parseInt(d)); // 弹出123
+	//alert(parseFloat(c)+parseFloat(e));
+
+// parseFloat 转换成float类型 
+// 避免小数点算错的问题 先乘以100 再除以100		
+	var f = 0.1;
+	var g = 0.2;	
+	// 相加等于0.300000000000004的问题，解决问题是 先乘以100 再除以100
+	// alert((parseFloat(f)*100+parseFloat(g)*100)/100);
+
+// 
+// split 以什么字符进行切割成数组
+// 调试的方法
+// 1.alert
+// 2.Console.log 打印方式 (在浏览器里面打印)
+// 3.document.title
+	var sTr = '2018-5-5';
+	var aRr = sTr.split('-');
+	var aRr2 = sTr.split('');
+
+	// alert(aRr);
+	console.log(aRr);
+	console.log(aRr2);
+	document.title = aRr;
+
+// charAt 获取第几个字符
+	var sTr2 = '#div1';
+	var sTr3 = '.div1';
+	var sTr4 = sTr2.charAt(0); 
+	if (sTr4=='#'){
+		alert('id选择器');
+	}
+// indexOf() 查找字符串是否含有某个字符串 （找到就弹出对应的位置 没有找到就弹出-1）
+	var sTr5 = 'Microsoft yahei';
+
+	var num = sTr5.indexOf('yahei');
+	//alert(num); // 弹出10
+
+	var num2 = sTr5.indexOf('xihei');
+	//alert(num2); // 弹出-1
+
+// substring 截取(开始截取的位置，到截取结束的位置)
+	var sTr6 = sTr5.substring(10,14);
+	alert(sTr6);
+// 转成大写 toUpperCase()
+	alert(sTr6.toUpperCase());
+// 转成小写 toLowerCase()	
+	alert(sTr6.toLowerCase());
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

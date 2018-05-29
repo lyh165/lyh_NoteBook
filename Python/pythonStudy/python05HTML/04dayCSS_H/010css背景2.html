@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css背景2</title>
+	<style type="text/css">
+	.box{
+		width: 320px;
+		height: 160px;
+		border:5px solid #000;
+		background-color: gold;
+		background-image: url(images/bg.jpg);
+		margin-bottom: 50px;
+		font-size: 40px;
+		color: gold;
+	}
+
+	.box2{
+		width: 320px;
+		height: 160px;
+		border:5px solid #000;
+		background-color: gold;
+		margin-bottom: 50px;
+		font-size: 40px;
+		color: red;
+	}
+	.box3{
+		width: 320px;
+		height: 160px;
+		border:5px solid #000;
+		margin-bottom: 50px;
+
+	
+		/*background-position: center;*/
+/*		background-color: gold;
+		background-image: url(images/bg.jpg);
+		background-repeat: no-repeat;
+		background-position: -20px 0px;
+*/	
+		/*将上面的简写成一句*/
+		background: url(images/bg.jpg) -20px -20px gold no-repeat;
+	}
+	.box4{
+		width: 100px;
+		height: 100px;
+		border:5px solid #000;
+		/*background-image: url(images/location_bg.jpg);
+		background-repeat: no-repeat;
+		background-position: -110px -150px;*/
+
+		background: url(images/location_bg.jpg) -110px -150px no-repeat;
+	}
+	</style>
+</head>
+<body style="height: 2000px">
+	<div class="box">背景图片</div>
+
+	<div class="box2"><img src="images/bg.jpg">背景图片</div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+
+</body>
+</html>
+
+<!-- 
+单词表
+
+ -->

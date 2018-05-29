@@ -1,0 +1,19 @@
+body{
+	background-color:  #fff;
+}
+
+.box01{
+	width: 200px;
+	height: 200px;
+	background-color: blue;
+	float: left;
+	margin: 20px;
+}
+
+.box02{
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
+	float: left;
+	margin: 20px;
+}

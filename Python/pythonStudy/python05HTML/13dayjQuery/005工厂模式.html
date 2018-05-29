@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	function Person(name,age,job){
+		var o = new Object(); // 创建一个空对象
+		o.name = name;
+		o.age = age;
+		o.job = job;
+
+		o.showname = function(){
+			alert(this.name);
+		}
+
+		o.showage = function(){
+			alert(this.age);
+		}
+
+		o.showjob = function(){
+			alert(this.job);
+		}
+
+		return o;
+	}
+
+	var l = Person('lyh',18,'python');
+	var z = Person('zs',18,'sql');
+
+	l.showjob();
+	z.showjob();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

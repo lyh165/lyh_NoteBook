@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量作用域</title>
+	<script type="text/javascript">
+
+// 全局变量 - 函数内部定义的变量，函数内部和外部都可以访问，它的值可以共享
+
+// 局部变量-函数内部定义的变量，函数内部可以访问，外部无法访问
+// 函数内部访问变量是，先在内部查找是否有次变量，如果有，就是用内部
+// 如果没有，就是使用外部。
+
+
+// 函数内部如果不用'var',关键字 定义变量，变量可能会变成全局变量
+
+		var a = 12;
+		var b = 10;
+		function aa(){
+			var b = 3;
+			var c = 7;
+			alert(a);
+			alert(c);
+			a++;
+			d = 20; // 定义全局变量
+
+		}
+		aa();	// 弹出12和7
+		alert(a); // 弹出13
+		//alert(c); // 报错
+		alert(d); // 弹出20
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
