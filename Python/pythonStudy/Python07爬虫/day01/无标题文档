@@ -1,0 +1,11 @@
+urllib2的位置
+	/usr/lib/python2.7
+
+2.vim只能提示插件
+	安装 sudo apt-get install vim-youcompleteme
+	卸载 sudo apt-get remove vim-youcompleteme
+3.简单爬虫
+	py xxx.py > baidu.html (重定向)
+
+
+https://tieba.baidu.com/f?kw=%E4%BC%A0%E6%99%BA%E5%8D%9A%E5%AE%A2&pn=0

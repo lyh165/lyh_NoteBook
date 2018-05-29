@@ -1,0 +1,471 @@
+2018-05-20 23:32:41 [scrapy] INFO: Scrapy 1.0.3 started (bot: dongguan)
+2018-05-20 23:32:41 [scrapy] INFO: Optional features available: ssl, http11, boto
+2018-05-20 23:32:41 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'dongguan.spiders', 'SPIDER_MODULES': ['dongguan.spiders'], 'LOG_FILE': 'dg.log', 'BOT_NAME': 'dongguan'}
+2018-05-20 23:32:41 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2018-05-20 23:32:41 [boto] DEBUG: Retrieving credentials from metadata server.
+2018-05-20 23:32:42 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1228, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error timed out>
+2018-05-20 23:32:42 [boto] ERROR: Unable to read instance data, giving up
+2018-05-20 23:32:42 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2018-05-20 23:32:42 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2018-05-20 23:32:42 [scrapy] INFO: Enabled item pipelines: DongguanPipeline
+2018-05-20 23:32:42 [scrapy] INFO: Spider opened
+2018-05-20 23:32:42 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-05-20 23:32:42 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-05-20 23:32:43 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+2018-05-20 23:32:43 [scrapy] ERROR: Spider error processing <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 73, in _parse_response
+    for request_or_item in self._requests_to_follow(response):
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 54, in _requests_to_follow
+    links = rule.process_links(links)
+  File "/home/share/paichong/day05/dongguan/dongguan/spiders/sun.py", line 34, in deal_links
+    link.url = link.url.relace("?","?").replace("Tpye&","Type?")
+AttributeError: 'str' object has no attribute 'relace'
+2018-05-20 23:32:43 [scrapy] INFO: Closing spider (finished)
+2018-05-20 23:32:43 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 256,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 29474,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 5, 20, 15, 32, 43, 250688),
+ 'log_count/DEBUG': 3,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 7,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/AttributeError': 1,
+ 'start_time': datetime.datetime(2018, 5, 20, 15, 32, 42, 834054)}
+2018-05-20 23:32:43 [scrapy] INFO: Spider closed (finished)
+2018-05-20 23:33:31 [scrapy] INFO: Scrapy 1.0.3 started (bot: dongguan)
+2018-05-20 23:33:31 [scrapy] INFO: Optional features available: ssl, http11, boto
+2018-05-20 23:33:31 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'dongguan.spiders', 'SPIDER_MODULES': ['dongguan.spiders'], 'LOG_FILE': 'dg.log', 'BOT_NAME': 'dongguan'}
+2018-05-20 23:33:31 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2018-05-20 23:33:31 [boto] DEBUG: Retrieving credentials from metadata server.
+2018-05-20 23:33:32 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1228, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error timed out>
+2018-05-20 23:33:32 [boto] ERROR: Unable to read instance data, giving up
+2018-05-20 23:33:32 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2018-05-20 23:33:32 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2018-05-20 23:33:32 [scrapy] INFO: Enabled item pipelines: DongguanPipeline
+2018-05-20 23:33:32 [scrapy] INFO: Spider opened
+2018-05-20 23:33:32 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-05-20 23:33:32 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-05-20 23:33:40 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+2018-05-20 23:33:41 [scrapy] ERROR: Spider error processing <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 73, in _parse_response
+    for request_or_item in self._requests_to_follow(response):
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 55, in _requests_to_follow
+    for link in links:
+TypeError: 'NoneType' object is not iterable
+2018-05-20 23:33:41 [scrapy] INFO: Closing spider (finished)
+2018-05-20 23:33:41 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 256,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 29474,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 5, 20, 15, 33, 41, 105390),
+ 'log_count/DEBUG': 3,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 7,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2018, 5, 20, 15, 33, 32, 488688)}
+2018-05-20 23:33:41 [scrapy] INFO: Spider closed (finished)
+2018-05-20 23:34:38 [scrapy] INFO: Scrapy 1.0.3 started (bot: dongguan)
+2018-05-20 23:34:38 [scrapy] INFO: Optional features available: ssl, http11, boto
+2018-05-20 23:34:38 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'dongguan.spiders', 'SPIDER_MODULES': ['dongguan.spiders'], 'LOG_FILE': 'dg.log', 'BOT_NAME': 'dongguan'}
+2018-05-20 23:34:39 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2018-05-20 23:34:39 [boto] DEBUG: Retrieving credentials from metadata server.
+2018-05-20 23:34:40 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1228, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error timed out>
+2018-05-20 23:34:40 [boto] ERROR: Unable to read instance data, giving up
+2018-05-20 23:34:40 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2018-05-20 23:34:40 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2018-05-20 23:34:40 [scrapy] INFO: Enabled item pipelines: DongguanPipeline
+2018-05-20 23:34:40 [scrapy] INFO: Spider opened
+2018-05-20 23:34:40 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-05-20 23:34:40 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-05-20 23:34:40 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+2018-05-20 23:34:40 [scrapy] ERROR: Spider error processing <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 73, in _parse_response
+    for request_or_item in self._requests_to_follow(response):
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 55, in _requests_to_follow
+    for link in links:
+TypeError: 'NoneType' object is not iterable
+2018-05-20 23:34:40 [scrapy] INFO: Closing spider (finished)
+2018-05-20 23:34:40 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 256,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 29474,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 5, 20, 15, 34, 40, 485717),
+ 'log_count/DEBUG': 3,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 7,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2018, 5, 20, 15, 34, 40, 184391)}
+2018-05-20 23:34:40 [scrapy] INFO: Spider closed (finished)
+2018-05-20 23:35:29 [scrapy] INFO: Scrapy 1.0.3 started (bot: dongguan)
+2018-05-20 23:35:29 [scrapy] INFO: Optional features available: ssl, http11, boto
+2018-05-20 23:35:29 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'dongguan.spiders', 'SPIDER_MODULES': ['dongguan.spiders'], 'LOG_FILE': 'dg.log', 'BOT_NAME': 'dongguan'}
+2018-05-20 23:35:31 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2018-05-20 23:35:31 [boto] DEBUG: Retrieving credentials from metadata server.
+2018-05-20 23:35:32 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1228, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error timed out>
+2018-05-20 23:35:32 [boto] ERROR: Unable to read instance data, giving up
+2018-05-20 23:35:32 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2018-05-20 23:35:32 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2018-05-20 23:35:32 [scrapy] INFO: Enabled item pipelines: DongguanPipeline
+2018-05-20 23:35:32 [scrapy] INFO: Spider opened
+2018-05-20 23:35:32 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-05-20 23:35:32 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-05-20 23:35:33 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+2018-05-20 23:35:33 [scrapy] ERROR: Spider error processing <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 73, in _parse_response
+    for request_or_item in self._requests_to_follow(response):
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 55, in _requests_to_follow
+    for link in links:
+TypeError: 'NoneType' object is not iterable
+2018-05-20 23:35:33 [scrapy] INFO: Closing spider (finished)
+2018-05-20 23:35:33 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 256,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 29474,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 5, 20, 15, 35, 33, 618952),
+ 'log_count/DEBUG': 3,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 7,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2018, 5, 20, 15, 35, 32, 918067)}
+2018-05-20 23:35:33 [scrapy] INFO: Spider closed (finished)
+2018-05-20 23:37:07 [scrapy] INFO: Scrapy 1.0.3 started (bot: dongguan)
+2018-05-20 23:37:07 [scrapy] INFO: Optional features available: ssl, http11, boto
+2018-05-20 23:37:07 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'dongguan.spiders', 'SPIDER_MODULES': ['dongguan.spiders'], 'LOG_FILE': 'dg.log', 'BOT_NAME': 'dongguan'}
+2018-05-20 23:37:08 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2018-05-20 23:37:08 [boto] DEBUG: Retrieving credentials from metadata server.
+2018-05-20 23:37:09 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1228, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error timed out>
+2018-05-20 23:37:09 [boto] ERROR: Unable to read instance data, giving up
+2018-05-20 23:37:09 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2018-05-20 23:37:09 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2018-05-20 23:37:09 [scrapy] INFO: Enabled item pipelines: DongguanPipeline
+2018-05-20 23:37:09 [scrapy] INFO: Spider opened
+2018-05-20 23:37:09 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-05-20 23:37:09 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-05-20 23:37:09 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+2018-05-20 23:37:09 [scrapy] ERROR: Spider error processing <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 73, in _parse_response
+    for request_or_item in self._requests_to_follow(response):
+  File "/usr/lib/python2.7/dist-packages/scrapy/spiders/crawl.py", line 55, in _requests_to_follow
+    for link in links:
+TypeError: 'NoneType' object is not iterable
+2018-05-20 23:37:09 [scrapy] INFO: Closing spider (finished)
+2018-05-20 23:37:09 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 256,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 29474,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 5, 20, 15, 37, 9, 485158),
+ 'log_count/DEBUG': 3,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 7,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2018, 5, 20, 15, 37, 9, 166182)}
+2018-05-20 23:37:09 [scrapy] INFO: Spider closed (finished)
+2018-05-20 23:38:32 [scrapy] INFO: Scrapy 1.0.3 started (bot: dongguan)
+2018-05-20 23:38:32 [scrapy] INFO: Optional features available: ssl, http11, boto
+2018-05-20 23:38:32 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'dongguan.spiders', 'SPIDER_MODULES': ['dongguan.spiders'], 'LOG_FILE': 'dg.log', 'BOT_NAME': 'dongguan'}
+2018-05-20 23:38:33 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2018-05-20 23:38:33 [boto] DEBUG: Retrieving credentials from metadata server.
+2018-05-20 23:38:34 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1228, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error timed out>
+2018-05-20 23:38:34 [boto] ERROR: Unable to read instance data, giving up
+2018-05-20 23:38:34 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2018-05-20 23:38:34 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2018-05-20 23:38:34 [scrapy] INFO: Enabled item pipelines: DongguanPipeline
+2018-05-20 23:38:34 [scrapy] INFO: Spider opened
+2018-05-20 23:38:34 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-05-20 23:38:34 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-05-20 23:38:34 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: None)
+2018-05-20 23:38:34 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=)
+2018-05-20 23:38:34 [scrapy] DEBUG: Filtered duplicate request: <GET http://wz.sun0769.com/index.php/question/questionType?type=4> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2018-05-20 23:38:35 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=)
+2018-05-20 23:38:36 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=60&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=)
+2018-05-20 23:38:36 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=210> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90&type=4)
+2018-05-20 23:38:36 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90960&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=)
+2018-05-20 23:38:38 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=180> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90&type=4)
+2018-05-20 23:38:39 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=330&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=210)
+2018-05-20 23:38:39 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90&type=4)
+2018-05-20 23:38:40 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=150> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90&type=4)
+2018-05-20 23:38:40 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=120&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=)
+2018-05-20 23:38:41 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90900> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90960&type=4)
+2018-05-20 23:38:41 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=240&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=210)
+2018-05-20 23:38:42 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=300&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=210)
+2018-05-20 23:38:43 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90870> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90960&type=4)
+2018-05-20 23:38:44 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=450> (referer: http://wz.sun0769.com/index.php/question/questionType?page=330&type=4)
+2018-05-20 23:38:46 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=420> (referer: http://wz.sun0769.com/index.php/question/questionType?page=330&type=4)
+2018-05-20 23:38:47 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=390> (referer: http://wz.sun0769.com/index.php/question/questionType?page=330&type=4)
+2018-05-20 23:38:48 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=360> (referer: http://wz.sun0769.com/index.php/question/questionType?page=330&type=4)
+2018-05-20 23:38:49 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90750&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90870)
+2018-05-20 23:38:50 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90840> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90960&type=4)
+2018-05-20 23:38:52 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90780&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90900)
+2018-05-20 23:38:53 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=540&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=450)
+2018-05-20 23:38:54 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=570&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=450)
+2018-05-20 23:38:55 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=480&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=450)
+2018-05-20 23:38:56 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90690> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90750&type=4)
+2018-05-20 23:38:58 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90630> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90750&type=4)
+2018-05-20 23:38:59 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90810&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90900)
+2018-05-20 23:39:00 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90660> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90750&type=4)
+2018-05-20 23:39:01 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=630> (referer: http://wz.sun0769.com/index.php/question/questionType?page=540&type=4)
+2018-05-20 23:39:02 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90720> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90750&type=4)
+2018-05-20 23:39:04 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=510&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=450)
+2018-05-20 23:39:04 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=660> (referer: http://wz.sun0769.com/index.php/question/questionType?page=540&type=4)
+2018-05-20 23:39:06 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90930> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90960&type=4)
+2018-05-20 23:39:07 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=270&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=210)
+2018-05-20 23:39:08 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90570&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90690)
+2018-05-20 23:39:09 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90540&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90630)
+2018-05-20 23:39:10 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=600> (referer: http://wz.sun0769.com/index.php/question/questionType?page=540&type=4)
+2018-05-20 23:39:11 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=690> (referer: http://wz.sun0769.com/index.php/question/questionType?page=570&type=4)
+2018-05-20 23:39:12 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90480> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90570&type=4)
+2018-05-20 23:39:13 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90510&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90630)
+2018-05-20 23:39:13 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=30&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=)
+2018-05-20 23:39:15 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90420> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90540&type=4)
+2018-05-20 23:39:16 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=720&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=630)
+2018-05-20 23:39:17 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90390&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90480)
+2018-05-20 23:39:19 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=810&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=690)
+2018-05-20 23:39:20 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90300&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90420)
+2018-05-20 23:39:21 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90450> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90570&type=4)
+2018-05-20 23:39:22 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90330&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90420)
+2018-05-20 23:39:23 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=750&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=630)
+2018-05-20 23:39:24 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90270> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90390&type=4)
+2018-05-20 23:39:25 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=930> (referer: http://wz.sun0769.com/index.php/question/questionType?page=810&type=4)
+2018-05-20 23:39:26 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=900> (referer: http://wz.sun0769.com/index.php/question/questionType?page=810&type=4)
+2018-05-20 23:39:27 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90210> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90300&type=4)
+2018-05-20 23:39:28 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=780&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=660)
+2018-05-20 23:39:30 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90360&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90480)
+2018-05-20 23:39:31 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90240> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90300&type=4)
+2018-05-20 23:39:32 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1050&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=930)
+2018-05-20 23:39:33 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=870> (referer: http://wz.sun0769.com/index.php/question/questionType?page=810&type=4)
+2018-05-20 23:39:34 [scrapy] INFO: Crawled 59 pages (at 59 pages/min), scraped 0 items (at 0 items/min)
+2018-05-20 23:39:34 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90600&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90690)
+2018-05-20 23:39:36 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=990&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=930)
+2018-05-20 23:39:38 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=840> (referer: http://wz.sun0769.com/index.php/question/questionType?page=720&type=4)
+2018-05-20 23:39:38 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90150&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90270)
+2018-05-20 23:39:40 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=960&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=930)
+2018-05-20 23:39:42 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90120&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90210)
+2018-05-20 23:39:43 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90180> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90300&type=4)
+2018-05-20 23:39:43 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=90090&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=90210)
+2018-05-20 23:39:44 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1140> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1050&type=4)
+2018-05-20 23:39:44 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1170> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1050&type=4)
+2018-05-20 23:39:45 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1020&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=930)
+2018-05-20 23:39:47 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=89970> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90090&type=4)
+2018-05-20 23:39:49 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1080> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1050&type=4)
+2018-05-20 23:39:50 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1200&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1140)
+2018-05-20 23:39:50 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1110> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1050&type=4)
+2018-05-20 23:39:51 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1260&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1140)
+2018-05-20 23:39:52 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1290&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1170)
+2018-05-20 23:39:52 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90060> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90150&type=4)
+2018-05-20 23:39:53 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=89850&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=89970)
+2018-05-20 23:39:55 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=89910&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=89970)
+2018-05-20 23:39:56 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=89880&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=89970)
+2018-05-20 23:39:57 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1350> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1260&type=4)
+2018-05-20 23:39:59 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1410> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1290&type=4)
+2018-05-20 23:39:59 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1230&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1140)
+2018-05-20 23:40:01 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90030> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90150&type=4)
+2018-05-20 23:40:02 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=90000> (referer: http://wz.sun0769.com/index.php/question/questionType?page=90120&type=4)
+2018-05-20 23:40:03 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1320> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1200&type=4)
+2018-05-20 23:40:04 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=89760> (referer: http://wz.sun0769.com/index.php/question/questionType?page=89850&type=4)
+2018-05-20 23:40:05 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=89730> (referer: http://wz.sun0769.com/index.php/question/questionType?page=89850&type=4)
+2018-05-20 23:40:06 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1440&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1350)
+2018-05-20 23:40:07 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1530&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1410)
+2018-05-20 23:40:08 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1380> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1260&type=4)
+2018-05-20 23:40:09 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1500&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1410)
+2018-05-20 23:40:10 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=89820> (referer: http://wz.sun0769.com/index.php/question/questionType?page=89850&type=4)
+2018-05-20 23:40:12 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=89640&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=89760)
+2018-05-20 23:40:13 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=89790> (referer: http://wz.sun0769.com/index.php/question/questionType?page=89850&type=4)
+2018-05-20 23:40:14 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=89940&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=89970)
+2018-05-20 23:40:15 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=89670&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=89760)
+2018-05-20 23:40:16 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1650> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1530&type=4)
+2018-05-20 23:40:17 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=89700&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=89760)
+2018-05-20 23:40:19 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1620> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1530&type=4)
+2018-05-20 23:40:20 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1560> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1440&type=4)
+2018-05-20 23:40:22 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=89550> (referer: http://wz.sun0769.com/index.php/question/questionType?page=89640&type=4)
+2018-05-20 23:40:23 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=89520> (referer: http://wz.sun0769.com/index.php/question/questionType?page=89640&type=4)
+2018-05-20 23:40:24 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1770&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1650)
+2018-05-20 23:40:26 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?type=4&page=1590> (referer: http://wz.sun0769.com/index.php/question/questionType?page=1530&type=4)
+2018-05-20 23:40:26 [scrapy] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2018-05-20 23:40:26 [scrapy] INFO: Closing spider (shutdown)
+2018-05-20 23:40:27 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=1680&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=1650)
+2018-05-20 23:40:28 [scrapy] DEBUG: Crawled (200) <GET http://wz.sun0769.com/index.php/question/questionType?page=89460&type=4> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=89550)
+2018-05-20 23:40:28 [scrapy] INFO: Received SIGINT twice, forcing unclean shutdown

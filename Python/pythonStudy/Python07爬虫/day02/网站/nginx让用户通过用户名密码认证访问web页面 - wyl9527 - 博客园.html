@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://www.cnblogs.com/wyl9527/p/6632927.html?utm_source=itdadao&utm_medium=referral -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/bundle-coffee.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/bundle-coffee-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wyl9527/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wyl9527/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wyl9527/wlwmanifest.xml">
+<script async="" src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/analytics.js.下载"></script><script src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+<script type="text/javascript">var currentBlogApp = 'wyl9527', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/wyl9527/"><img id="blogLogo" src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/wyl9527/">wyl9527</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+	<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/wyl9527/">首页</a></li>
+	<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="blog_nav_contact" accesskey="9" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/wyl9527">联系</a></li>
+	<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+	<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/wyl9527/rss">订阅</a>
+	<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/wyl9527/rss"><img src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/xml.gif" alt="订阅"></a></li>
+</ul>
+
+
+			<div class="blogStats">
+				
+				<div id="blog_stats">
+<!--done-->
+随笔- 61&nbsp;
+文章- 0&nbsp;
+评论- 0&nbsp;
+</div>
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/wyl9527/p/6632927.html">nginx让用户通过用户名密码认证访问web页面</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><h3>在使用nginx转发的时候，要进行一次用户身份的确认。</h3>
+<p>1）<strong>通过</strong><strong>htpasswd</strong><strong>命令生成用户名及对应密码数据库文件。</strong></p>
+<table class="wysiwyg-macro" data-macro-name="code" data-macro-id="b2c0f55a-998d-48bb-bd3c-a4172d4213e3" data-macro-schema-version="1" data-macro-body-type="PLAIN_TEXT">
+<tbody>
+<tr>
+<td class="wysiwyg-macro-body">
+<pre>[root@bgs-5p173-wangwenting ~]# htpasswd -c /usr/local/nginx/passwd.db wyl  <span style="background-color: #ffffff; color: #99cc00">//创建认证信息，wyl 为认证用户名</span> 
+New password: *******  <span style="color: #99cc00">//输入认证密码</span> 
+Re-type new password: ********  <span style="color: #99cc00">//再次输入认证密码</span> 
+Adding password for user wyl
+[root@bgs-5p173-wangwenting ~]# chmod 400 /usr/local/nginx/passwd.db  <span style="background-color: #ffffff; color: #99cc00">//修改网站认证数据库权限 </span>
+[root@bgs-5p173-wangwenting ~]# chown root:root /usr/local/nginx/passwd.db  <span style="background-color: #ffffff; color: #99cc00">//修改网站认证数据库属主和属组 </span>
+[root@bgs-5p173-wangwenting ~]# cat /usr/local/nginx/passwd.db <span style="background-color: #ffffff; color: #99cc00"> //可以看到通过htpasswd生成的密码为加密格式</span> 
+wyl:r5IXRXWSmlBk6</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p>2)<strong>编辑虚拟主机配置文件。</strong></p>
+<table class="wysiwyg-macro" data-macro-name="code" data-macro-id="227fa021-93c7-4e24-b996-0ee463e83ad1" data-macro-schema-version="1" data-macro-body-type="PLAIN_TEXT">
+<tbody>
+<tr>
+<td class="wysiwyg-macro-body">
+<pre>[root@bgs-5p173-wangwenting ~]# vim /usr/local/nginx/conf/nginx.conf <span style="color: #99cc00">//主配置文件中http字段中添加以下语句</span>
+
+user  root;
+worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+    }
+
+
+server {
+     listen       12171;
+     server_name  localhost;
+
+     client_max_body_size    151m;
+
+   location / {
+         auth_basic "s1"; <span style="color: #99cc00"> #虚拟主机认证命名</span> 
+         auth_basic_user_file /usr/local/nginx/passwd.db; <span style="color: #99cc00">#虚拟主机用户名密码认证数据库</span>     
+         #proxy_pass http://10.0.0.10:9011; <span style="color: #99cc00"> #nginx 访问</span>
+	 root   html;
+            index  index.html index.htm; 
+}
+}
+
+
+server {
+     listen       12172;
+     server_name  localhost;
+
+     client_max_body_size    151m;
+
+   location / {
+         auth_basic "s1";  <span style="color: #99cc00">#虚拟主机认证命名</span> 
+         auth_basic_user_file /usr/local/nginx/passwd.db; <span style="color: #99cc00">#虚拟主机用户名密码认证数据库</span>     
+         proxy_pass http://10.0.0.10:8088; <span style="color: #99cc00"> #hadoop 访问</span>
+ }
+}
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3）重启nginx</strong></p>
+<p><strong>&nbsp;</strong></p>
+<table class="wysiwyg-macro" data-macro-name="code" data-macro-id="7699212a-b60d-405f-bd9c-025fb1fbbc88" data-macro-schema-version="1" data-macro-body-type="PLAIN_TEXT">
+<tbody>
+<tr>
+<td class="wysiwyg-macro-body">
+<pre>[root@bgs-5p173-wangwenting nginx]# ./nginx -s reload </pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4)访问hadoop,需要输入密码和账号，输入正确的用户名和密码之后，就可以访问hadoop了。</strong></p>
+<p><img src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/1101966-20170328111202936-713669693.png" alt=""></p>
+<p><img src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/1101966-20170328111243670-1025510970.png" alt=""></p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/wyl9527/category/958139.html" target="_blank">linux</a></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/wyl9527/tag/nginx%20%20%E7%94%A8%E6%88%B7%E9%AA%8C%E8%AF%81/">nginx  用户验证</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6632927,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;45431e31-51ec-e611-845c-ac853d9f53ac&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/wyl9527/" target="_blank"><img src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/20170215091542.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/wyl9527/">wyl9527</a><br>
+            <a href="http://home.cnblogs.com/u/wyl9527/followees">关注 - 3</a><br>
+            <a href="http://home.cnblogs.com/u/wyl9527/followers">粉丝 - 4</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;45431e31-51ec-e611-845c-ac853d9f53ac&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6632927,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(6632927,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/wyl9527/p/6554937.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/wyl9527/p/6554937.html" title="发布于2017-03-15 16:33">4、umask的权限设置</a><br><a href="http://www.cnblogs.com/wyl9527/p/6633002.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/wyl9527/p/6633002.html" title="发布于2017-03-28 11:20">gcc-5.2.0离线安装</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2017-03-28 11:14</span> <a href="http://www.cnblogs.com/wyl9527/">wyl9527</a> 阅读(<span id="post_view_count">2621</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6632927" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/wyl9527/p/6632927.html?utm_source=itdadao&amp;utm_medium=referral#" onclick="AddToWz(6632927);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=330671,cb_entryId=6632927,cb_blogApp=currentBlogApp,cb_blogUserGuid='45431e31-51ec-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2017/3/28 11:14:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/wyl9527/p/6632927.html?utm_source=itdadao&amp;utm_medium=referral#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/wyl9527/p/6632927.html?utm_source=itdadao&amp;utm_medium=referral#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><ul><li><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a></li><li><a href="https://www.yunqi2050.com/" target="_blank">【活动】2050 大会 - 年青人因科技而团聚（5.26-5.27 杭州·云栖小镇）</a></li><li><a href="http://r.h5king.com/r/?rno=1881" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-民生&#39;)">【活动】缺钱怎么办？5万内你尽管花！</a></li><li><a href="http://clickc.admaster.com.cn/c/a105960,b2436452,c1705,i0,m101,8a1,8b2,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-DevCloud&#39;)">【推荐】华为云DevCloud精彩活动集结，重磅福利，免费领取！</a></li><li><a href="https://cloud.tencent.com/act/first_purchase?fromSource=gwzcw.919198.919198.919198" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯云&#39;)">【活动】腾讯云云服务器新购特惠，5折上云</a></li><li><a href="http://challenge.xfyun.cn/?ch=bk" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-xfyun&#39;)">【大赛】2018首届“顶天立地”AI开发者大赛</a></li></ul></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C1&#39;);" href="https://cloud.tencent.com/product/tac?fromSource=gwzcw.924353.924353.924353" target="_blank"><img width="300" height="250" src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/24442-20180509134043877-1617765201.jpg" alt="腾讯云0509"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/596929/" target="_blank">清华大学冯建江：指纹识别现状与研究进展</a><br> ·  <a href="https://news.cnblogs.com/n/596927/" target="_blank">Unite 2018：AI亮相，AR登场，参展VR内容数量减少</a><br> ·  <a href="https://news.cnblogs.com/n/596923/" target="_blank">诺基亚成立深圳实验室 重新开掘中国市场</a><br> ·  <a href="https://news.cnblogs.com/n/596921/" target="_blank">微软公布为双手障碍玩家设计的辅助型Xbox Adaptive控制器</a><br> ·  <a href="https://news.cnblogs.com/n/596920/" target="_blank">消息称菜鸟将与一汽等将推无人物流 官方未表态</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://click.aliyun.com/m/9667/" target="_blank"><img src="./nginx让用户通过用户名密码认证访问web页面 - wyl9527 - 博客园_files/TB1iQKbhqmWBuNjy1XaXXXCbXXa-468-60.jpg" alt="" style="width: 468px; height: 60px;"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/596164/" target="_blank">评审的艺术——谈谈现实中的代码评审</a><br> ·  <a href="http://kb.cnblogs.com/page/577233/" target="_blank">如何高效学习</a><br> ·  <a href="http://kb.cnblogs.com/page/578689/" target="_blank">如何成为优秀的程序员？</a><br> ·  <a href="http://kb.cnblogs.com/page/594930/" target="_blank">菜鸟工程师的超神之路 -- 从校园到职场</a><br> ·  <a href="http://kb.cnblogs.com/page/593985/" target="_blank">如何识别人的技术能力和水平？</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/wyl9527/">wyl9527</a><br>园龄：<a href="https://home.cnblogs.com/u/wyl9527/" title="入园时间：2017-02-06">1年3个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/wyl9527/followers/">4</a><br>关注：<a href="https://home.cnblogs.com/u/wyl9527/followees/">3</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;45431e31-51ec-e611-845c-ac853d9f53ac&#39;)">+加关注</a></div><script>getFollowStatus('45431e31-51ec-e611-845c-ac853d9f53ac')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/04/01&#39;);return false;">&lt;</a></td><td align="center">2018年5月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/06/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td class="CalWeekendDay" align="center">5</td></tr><tr><td class="CalWeekendDay" align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td class="CalWeekendDay" align="center">12</td></tr><tr><td class="CalWeekendDay" align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td class="CalTodayDay" align="center">17</td><td align="center">18</td><td class="CalWeekendDay" align="center">19</td></tr><tr><td class="CalWeekendDay" align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td class="CalWeekendDay" align="center">26</td></tr><tr><td class="CalWeekendDay" align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td></tr><tr><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/wyl9527/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/wyl9527/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/wyl9527/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/wyl9527/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/wyl9527/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass(&#39;itemListLink&#39;, &#39;itemListLin_con&#39;);return false;" href="https://www.cnblogs.com/wyl9527/p/6632927.html?utm_source=itdadao&amp;utm_medium=referral#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/wyl9527/tag/codis%E7%9A%84%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/">codis的集群安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/django%20%20unicode%20%E7%AB%99%E7%82%B9%E6%98%BE%E7%A4%BA%E5%90%8D%E7%A7%B0/">django  unicode 站点显示名称</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/hadoop%E7%9A%84%E7%A6%BB%E7%BA%BF%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/">hadoop的离线集群安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/hadoop%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85/">hadoop分布式安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/hbase%E7%9A%84%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/">hbase的集群安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/hive%E7%9A%84%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/">hive的集群安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/jdk%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/">jdk离线安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/kafka%E7%9A%84%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/">kafka的集群安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/mongodb%E7%9A%84%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/">mongodb的集群安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/mysql%E7%9A%84%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/">mysql的离线安装</a>(1)</li><li><a href="http://www.cnblogs.com/wyl9527/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/wyl9527/category/976717.html">django(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/wyl9527/category/956466.html">Hibernate(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/wyl9527/category/956465.html">java基础</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/wyl9527/category/958139.html">linux(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/wyl9527/category/943892.html">mybatis(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/wyl9527/category/962584.html">mysql(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/wyl9527/category/999787.html">saltstack一键部署(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/wyl9527/category/1003211.html">shell(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/wyl9527/category/943893.html">spring(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/wyl9527/category/945413.html">组件安装(17)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/wyl9527/archive/2017/05.html">2017年5月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/wyl9527/archive/2017/04.html">2017年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/wyl9527/archive/2017/03.html">2017年3月 (21)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/wyl9527/archive/2017/02.html">2017年2月 (19)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap" style="display: none;">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"></div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/wyl9527/p/6377217.html">1. mybatis对象之间映射关系以及数据库表建立的时候外键的添加(2743)</a></li><li><a href="http://www.cnblogs.com/wyl9527/p/6632927.html">2. nginx让用户通过用户名密码认证访问web页面(2621)</a></li><li><a href="http://www.cnblogs.com/wyl9527/p/6495444.html">3. 2、sudo时候出现no valid sudoers sources found, quitting(2470)</a></li><li><a href="http://www.cnblogs.com/wyl9527/p/6377240.html">4. mybatis高级映射(1978)</a></li><li><a href="http://www.cnblogs.com/wyl9527/p/6395387.html">5. 10、linux上安装hive(1312)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap" style="display: none;">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/wyl9527/p/6377240.html">1. mybatis高级映射(3)</a></li><li><a href="http://www.cnblogs.com/wyl9527/p/6372535.html">2. 1、mybatis基础知识(1)</a></li><li><a href="http://www.cnblogs.com/wyl9527/p/6374812.html">3. mybatis的逆向工程(1)</a></li><li><a href="http://www.cnblogs.com/wyl9527/p/6377217.html">4. mybatis对象之间映射关系以及数据库表建立的时候外键的添加(1)</a></li><li><a href="http://www.cnblogs.com/wyl9527/p/6382325.html">5. 12、Ambari 环境搭建(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 wyl9527
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

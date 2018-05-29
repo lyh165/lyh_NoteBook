@@ -1,0 +1,31 @@
+
+
+name = "dongguan"
+start_urls = http://wz.sun0769.com/index.php/question/questionType?type=4&page=0
+
+				
+LinkExtractor(allow=r'type=4&page=\d+',follow = True)
+LinkExtractor(allow=r'/question/\d+/\d+.shtml',follow = True,callback = "parsedongguan")
+
+def parsedongguan(self,response):
+	item = dongguanItem()
+	# 标题
+	item['title'] = response.xpath('//div[@class="pagecenter p3"]//strong[@class="tgray14"]')
+	# 编号
+	item['num'] = title.split(' ')[-1].split(":")[-1]
+	# 内容
+	item['content'] = response.xpath('//div[@class="c1 text14_2"]/text()')
+	# 链接
+	item['url'] = respsonse.url
+
+	yield item
+
+
+
+follow 表示 repsonse 提取的链接是否需要跟进 (flase 就是不跟进) (true就是跟进) follow默认设置为Ture 否则默认为 Flase
+		callback为 None 
+		
+反爬虫操作
+一开始是爬取的http://wz.sun0769.com/index.php/question/questionType?page=30&type=4
+然后那边通过返回一个反爬虫的链接
+http://wz.sun0769.com/index.php/question/questionType&type=4?page=90900

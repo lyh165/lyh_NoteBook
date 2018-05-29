@@ -1,0 +1,7 @@
+pip2 install scrapy
+
+sudo apt install python-scrapy
+
+
+本天目录结构
+	1.mySprider 第一个爬虫项目

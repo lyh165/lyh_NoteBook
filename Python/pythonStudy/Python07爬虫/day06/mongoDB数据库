@@ -1,0 +1,19 @@
+MongoDB
+查看当前和数据库
+db
+
+查看所有数据库
+show dbs
+
+链接到xx数据库
+use xxx
+
+查看数据库下所有的表
+show collections
+
+查看yyy表里面的数据
+dd.yyy.find()
+
+删除当前数据库
+db.dropDatabase()
+

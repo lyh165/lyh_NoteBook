@@ -1,0 +1,11 @@
+pip2 install scrapy
+
+sudo apt install python-scrapy
+
+
+本天目录结构
+	1.mySprider 第一个爬虫项目
+
+iPhone user-agent
+
+User-Agent: QIYIVideo/8.9.5 (iOS;com.qiyi.iphone;iOS11.2.1;iPhone8,2) Corejar

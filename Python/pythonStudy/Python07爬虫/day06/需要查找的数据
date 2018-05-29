@@ -1,0 +1,15 @@
+
+// 标题
+//div[@class="info"]//span[@class="title"][1]/text()
+
+
+// 信息
+//div[@class="info"]//div[@class="bd"]
+//div[@class="info"]//div[@class="bd"]/p/text()
+
+// 评分
+//div[@class="info"]//div[@class="bd"]//span[@class="rating_num"]
+
+//简介
+//div[@class="info"]//p[@class="quote"]/span/text()
+

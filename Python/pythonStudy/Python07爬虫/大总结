@@ -1,0 +1,43 @@
+>>> 爬虫创建项目流程
+	库安装
+		pip install requests
+		pip install 安装BeautifulSoup
+		pip2 install scrapy 
+		sudo apt install python-scrapy
+	常用代码	
+		(ie9请求报文头 : "User-Agent":"Mozilla/5.0(compatible;MSIE9.0;WindowsNT6.1;Trident/5.0;")	
+		USER_AGENT = "Mozilla/5.0(compatible;MSIE9.0;WindowsNT6.1;Trident/5.0;"
+		  Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)
+		  Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2)
+		  Opera/9.27 (Windows NT 5.2; U; zh-cn)
+  		  Opera/8.0 (Macintosh; PPC Mac OS X; U; en)
+  		  Mozilla/5.0 (Macintosh; PPC Mac OS X; U; en) Opera 8.0 
+          Mozilla/5.0 (Linux; U; Android 4.0.3; zh-cn; M032 Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
+		  Mozilla/5.0 (Windows; U; Windows NT 5.2) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13 
+	常用指令
+		scrapy startproject 项目名称(mySpider)
+		scrapy genspider myspider(爬虫文件名) itcast.cn(需要爬取那个网站)
+		scrapy crawl 项目名
+		scrapy crawl itcast -o itcast.json
+
+>>> MongoDB
+			MongoDB
+			查看当前和数据库
+			db
+
+			查看所有数据库
+			show dbs
+
+			链接到xx数据库
+			use xxx
+
+			查看数据库下所有的表
+			show collections
+
+			查看yyy表里面的数据
+			dd.yyy.find()
+
+			删除当前数据库
+			db.dropDatabase()
+
+>>> redis
